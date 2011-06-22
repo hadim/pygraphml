@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="PositionX" for="node" attr.name="PositionX" attr.type="int"/>
+  <key id="PositionY" for="node" attr.name="PositionY" attr.type="int"/>
+  <key id="PositionZ" for="node" attr.name="PositionZ" attr.type="int"/>
+  <key id="TotalVolumeInCubicMillimeters" for="edge" attr.name="TotalVolumeInCubicMillimeters" attr.type="double"/>
+  <graph id="MaBS" edgedefault="directed">
+    <node id="RootNode">
+      <data key="PositionX">9</data>
+      <data key="PositionY">115</data>
+      <data key="PositionZ">178</data>
+    </node>
+    <node id="StartNode">
+      <data key="PositionX">82</data>
+      <data key="PositionY">61</data>
+      <data key="PositionZ">97</data>
+    </node>
+    <node id="Node.1">
+      <data key="PositionX">90</data>
+      <data key="PositionY">48</data>
+      <data key="PositionZ">106</data>
+    </node>
+    <node id="Node.1.1">
+      <data key="PositionX">81</data>
+      <data key="PositionY">24</data>
+      <data key="PositionZ">98</data>
+    </node>
+    <node id="Node.1.1.1">
+      <data key="PositionX">63</data>
+      <data key="PositionY">24</data>
+      <data key="PositionZ">110</data>
+    </node>
+    <node id="Node.1.1.2">
+      <data key="PositionX">87</data>
+      <data key="PositionY">14</data>
+      <data key="PositionZ">86</data>
+    </node>
+    <node id="Node.1.2">
+      <data key="PositionX">103</data>
+      <data key="PositionY">54</data>
+      <data key="PositionZ">124</data>
+    </node>
+    <node id="Node.1.2.1">
+      <data key="PositionX">95</data>
+      <data key="PositionY">53</data>
+      <data key="PositionZ">154</data>
+    </node>
+    <node id="Node.1.2.1.1">
+      <data key="PositionX">85</data>
+      <data key="PositionY">41</data>
+      <data key="PositionZ">156</data>
+    </node>
+    <node id="Node.1.2.1.2">
+      <data key="PositionX">109</data>
+      <data key="PositionY">76</data>
+      <data key="PositionZ">175</data>
+    </node>
+    <node id="Node.1.2.1.2.1">
+      <data key="PositionX">114</data>
+      <data key="PositionY">75</data>
+      <data key="PositionZ">176</data>
+    </node>
+    <node id="Node.1.2.1.2.2">
+      <data key="PositionX">107</data>
+      <data key="PositionY">92</data>
+      <data key="PositionZ">167</data>
+    </node>
+    <node id="Node.1.2.2">
+      <data key="PositionX">125</data>
+      <data key="PositionY">60</data>
+      <data key="PositionZ">125</data>
+    </node>
+    <node id="Node.1.2.2.1">
+      <data key="PositionX">132</data>
+      <data key="PositionY">51</data>
+      <data key="PositionZ">120</data>
+    </node>
+    <node id="Node.1.2.2.2">
+      <data key="PositionX">127</data>
+      <data key="PositionY">66</data>
+      <data key="PositionZ">129</data>
+    </node>
+    <node id="Node.1.2.2.2.1">
+      <data key="PositionX">119</data>
+      <data key="PositionY">90</data>
+      <data key="PositionZ">120</data>
+    </node>
+    <node id="Node.1.2.2.2.2">
+      <data key="PositionX">133</data>
+      <data key="PositionY">61</data>
+      <data key="PositionZ">142</data>
+    </node>
+    <node id="Node.2">
+      <data key="PositionX">97</data>
+      <data key="PositionY">62</data>
+      <data key="PositionZ">62</data>
+    </node>
+    <node id="Node.2.1">
+      <data key="PositionX">71</data>
+      <data key="PositionY">58</data>
+      <data key="PositionZ">32</data>
+    </node>
+    <node id="Node.2.1.1">
+      <data key="PositionX">58</data>
+      <data key="PositionY">42</data>
+      <data key="PositionZ">38</data>
+    </node>
+    <node id="Node.2.1.1.1">
+      <data key="PositionX">41</data>
+      <data key="PositionY">49</data>
+      <data key="PositionZ">49</data>
+    </node>
+    <node id="Node.2.1.1.2">
+      <data key="PositionX">62</data>
+      <data key="PositionY">33</data>
+      <data key="PositionZ">37</data>
+    </node>
+    <node id="Node.2.1.2">
+      <data key="PositionX">70</data>
+      <data key="PositionY">68</data>
+      <data key="PositionZ">24</data>
+    </node>
+    <node id="Node.2.1.2.1">
+      <data key="PositionX">49</data>
+      <data key="PositionY">83</data>
+      <data key="PositionZ">26</data>
+    </node>
+    <node id="Node.2.1.2.2">
+      <data key="PositionX">92</data>
+      <data key="PositionY">78</data>
+      <data key="PositionZ">12</data>
+    </node>
+    <node id="Node.2.2">
+      <data key="PositionX">110</data>
+      <data key="PositionY">66</data>
+      <data key="PositionZ">63</data>
+    </node>
+    <node id="Node.2.2.1">
+      <data key="PositionX">108</data>
+      <data key="PositionY">86</data>
+      <data key="PositionZ">58</data>
+    </node>
+    <node id="Node.2.2.2">
+      <data key="PositionX">119</data>
+      <data key="PositionY">59</data>
+      <data key="PositionZ">67</data>
+    </node>
+    <node id="Node.2.2.2.1">
+      <data key="PositionX">127</data>
+      <data key="PositionY">43</data>
+      <data key="PositionZ">67</data>
+    </node>
+    <node id="Node.2.2.2.2">
+      <data key="PositionX">132</data>
+      <data key="PositionY">71</data>
+      <data key="PositionZ">76</data>
+    </node>
+    <edge source="RootNode" target="StartNode">
+      <data key="TotalVolumeInCubicMillimeters">0.00033035229950515734</data>
+    </edge>
+    <edge source="StartNode" target="Node.1">
+      <data key="TotalVolumeInCubicMillimeters">3.7870139132191298e-005</data>
+    </edge>
+    <edge source="Node.1" target="Node.1.1">
+      <data key="TotalVolumeInCubicMillimeters">5.7667401007776419e-005</data>
+    </edge>
+    <edge source="Node.1.1" target="Node.1.1.1">
+      <data key="TotalVolumeInCubicMillimeters">0.0001323465195066335</data>
+    </edge>
+    <edge source="Node.1.1" target="Node.1.1.2">
+      <data key="TotalVolumeInCubicMillimeters">9.9019470620598259e-005</data>
+    </edge>
+    <edge source="Node.1" target="Node.1.2">
+      <data key="TotalVolumeInCubicMillimeters">4.6823674653812703e-005</data>
+    </edge>
+    <edge source="Node.1.2" target="Node.1.2.1">
+      <data key="TotalVolumeInCubicMillimeters">6.1248815216424971e-005</data>
+    </edge>
+    <edge source="Node.1.2.1" target="Node.1.2.1.1">
+      <data key="TotalVolumeInCubicMillimeters">7.0334995708737081e-005</data>
+    </edge>
+    <edge source="Node.1.2.1" target="Node.1.2.1.2">
+      <data key="TotalVolumeInCubicMillimeters">0.00017728000332810392</data>
+    </edge>
+    <edge source="Node.1.2.1.2" target="Node.1.2.1.2.1">
+      <data key="TotalVolumeInCubicMillimeters">4.2346906893001997e-005</data>
+    </edge>
+    <edge source="Node.1.2.1.2" target="Node.1.2.1.2.2">
+      <data key="TotalVolumeInCubicMillimeters">0.0001393103804678946</data>
+    </edge>
+    <edge source="Node.1.2" target="Node.1.2.2">
+      <data key="TotalVolumeInCubicMillimeters">4.490032257879774e-005</data>
+    </edge>
+    <edge source="Node.1.2.2" target="Node.1.2.2.1">
+      <data key="TotalVolumeInCubicMillimeters">7.1130865532881198e-005</data>
+    </edge>
+    <edge source="Node.1.2.2" target="Node.1.2.2.2">
+      <data key="TotalVolumeInCubicMillimeters">1.740965240315274e-005</data>
+    </edge>
+    <edge source="Node.1.2.2.2" target="Node.1.2.2.2.1">
+      <data key="TotalVolumeInCubicMillimeters">0.0001159648656263336</data>
+    </edge>
+    <edge source="Node.1.2.2.2" target="Node.1.2.2.2.2">
+      <data key="TotalVolumeInCubicMillimeters">8.7479358170508437e-005</data>
+    </edge>
+    <edge source="StartNode" target="Node.2">
+      <data key="TotalVolumeInCubicMillimeters">9.5935475052039775e-005</data>
+    </edge>
+    <edge source="Node.2" target="Node.2.1">
+      <data key="TotalVolumeInCubicMillimeters">9.2984124454171974e-005</data>
+    </edge>
+    <edge source="Node.2.1" target="Node.2.1.1">
+      <data key="TotalVolumeInCubicMillimeters">7.9487498686394513e-005</data>
+    </edge>
+    <edge source="Node.2.1.1" target="Node.2.1.1.1">
+      <data key="TotalVolumeInCubicMillimeters">0.00013977463786531201</data>
+    </edge>
+    <edge source="Node.2.1.1" target="Node.2.1.1.2">
+      <data key="TotalVolumeInCubicMillimeters">0.00014342237455930592</data>
+    </edge>
+    <edge source="Node.2.1" target="Node.2.1.2">
+      <data key="TotalVolumeInCubicMillimeters">5.1001991230569361e-005</data>
+    </edge>
+    <edge source="Node.2.1.2" target="Node.2.1.2.1">
+      <data key="TotalVolumeInCubicMillimeters">0.00019226888501615159</data>
+    </edge>
+    <edge source="Node.2.1.2" target="Node.2.1.2.2">
+      <data key="TotalVolumeInCubicMillimeters">0.00012110485824059773</data>
+    </edge>
+    <edge source="Node.2" target="Node.2.2">
+      <data key="TotalVolumeInCubicMillimeters">4.8083801875374241e-005</data>
+    </edge>
+    <edge source="Node.2.2" target="Node.2.2.1">
+      <data key="TotalVolumeInCubicMillimeters">5.2660053364202957e-005</data>
+    </edge>
+    <edge source="Node.2.2" target="Node.2.2.2">
+      <data key="TotalVolumeInCubicMillimeters">2.7988088815735074e-005</data>
+    </edge>
+    <edge source="Node.2.2.2" target="Node.2.2.2.1">
+      <data key="TotalVolumeInCubicMillimeters">6.6919387713451866e-005</data>
+    </edge>
+    <edge source="Node.2.2.2" target="Node.2.2.2.2">
+      <data key="TotalVolumeInCubicMillimeters">6.5062358123782238e-005</data>
+    </edge>
+  </graph>
+</graphml>
