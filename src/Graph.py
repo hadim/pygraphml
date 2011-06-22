@@ -7,18 +7,21 @@ class Graph:
     """
     """
 
-    def __init__(self):
+    def __init__(self, name = ""):
         """
         """
+
+        self.name = name
 
         self.nodes = []
         self.edges = []
 
-    def addNode(self):
+    def addNode(self, label = ""):
         """
         """
 
         n = Node()
+        n['label'] = label
         self.nodes.append(n)
 
         return n
@@ -37,7 +40,25 @@ class Graph:
 
         return e
 
-    def show(self):
+    def addEdgeByLabel(self, label1, label2):
+        """
+        """
+
+        n1 = None
+        n2 = None
+
+        for n in self.nodes:
+            if n['label'] == label1:
+                n1 = n
+            elif n['label'] == label2:
+                n2 = n
+
+        if n1 and n2:
+            return self.addEdge(n1, n2)
+        else:
+            return
+
+    def show(self, show_label = False):
         """
         """
 
@@ -50,10 +71,20 @@ class Graph:
         G = nx.Graph()
 
         for n in self.nodes:
-            G.add_node(n.id)
+            if show_label:
+                n_label = n['label']
+            else:
+                n_label = n.id
+            G.add_node(n_label)
 
         for e in self.edges:
-            G.add_edge(e.node1.id, e.node2.id)
+            if show_label:
+                n1_label = e.node1['label']
+                n2_label = e.node2['label']
+            else:
+                n1_label = e.node1.id
+                n2_label = e.node2.id
+            G.add_edge(n1_label, n2_label)
 
         nx.draw(G)
         plt.show()

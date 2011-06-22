@@ -1,20 +1,16 @@
 #-*- coding: utf-8 -*-
 
-from Attributes import *
+from Item import *
 
-class Node:
+class Node(Item):
     """
     """
-
-    ID = 0
 
     def __init__(self):
         """
         """
 
-        self.id = Node.ID
-        Node.ID += 1
+        super(Node, self).__init__()
 
         self.edges = []
-
-        self.attr = Attributes()
+        

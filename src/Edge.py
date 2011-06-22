@@ -1,21 +1,17 @@
 #-*- coding: utf-8 -*-
 
-from Attributes import *
+from Item import *
 
-class Edge:
+class Edge(Item):
     """
     """
-
-    ID = 0
 
     def __init__(self, node1, node2):
         """
         """
 
-        self.id = Edge.ID
-        Edge.ID += 1
+        super(Edge, self).__init__()
 
         self.node1 = node1
         self.node2 = node2
-
-        self.attr = Attributes()
+        
