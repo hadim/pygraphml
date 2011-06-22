@@ -1,21 +1,12 @@
 #-*- coding: utf-8 -*-
 
+from GraphMLParser import *
 from Graph import *
 from Node import *
 from Edge import *
 
-g = Graph()
+import sys
 
-nodes = []
-for i in range(5):
-    node = g.addNode("node " + str(i))
-    nodes.append(node)
-
-g.addEdge(nodes[0], nodes[2])
-g.addEdge(nodes[2], nodes[4])
-g.addEdge(nodes[0], nodes[3])
-
-#g.show()
-
-for n in nodes:
-    print n
+parser = GraphMLParser()
+g = parser.parse(sys.argv[1])
+g.show(True)

@@ -46,7 +46,10 @@ class GraphMLParser:
             e = g.addEdgeByLabel(source, dest)
 
             for attr in edge.getElementsByTagName("data"):
-                e[attr.getAttribute("key")] = attr.firstChild.data
+                if attr.firstChild:
+                    e[attr.getAttribute("key")] = attr.firstChild.data
+                else:
+                    e[attr.getAttribute("key")] = ""
 
         return g
 
