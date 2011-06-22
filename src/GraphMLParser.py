@@ -37,7 +37,10 @@ class GraphMLParser:
             n = g.addNode(node.getAttribute('id'))
 
             for attr in node.getElementsByTagName("data"):
-                n[attr.getAttribute("key")] = attr.firstChild.data
+                if attr.firstChild:
+                    n[attr.getAttribute("key")] = attr.firstChild.data
+                else:
+                    n[attr.getAttribute("key")] = ""
 
         # Get edges
         for edge in graph.getElementsByTagName("edge"):
