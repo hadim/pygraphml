@@ -22,11 +22,15 @@ class Item(object):
         """
 
         s = ""
+
+        s += "ID: %i" % self.id
+        s += "\n"
+        
         for a in self.attr:
             s += "%s : %s" % (self.attr[a].name, str(self.attr[a].value))
             s += "\n"
 
-        return s[:-2]
+        return s
 
     def __setitem__(self, name, value):
         """
