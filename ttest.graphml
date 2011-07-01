@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<graphml>
+    <graph edgedefault="directed" id="">
+        <node id="salut">
+            <data key="positionX">
+                555
+            </data>
+        </node>
+        <node id="coucou"/>
+        <edge source="salut" target="coucou"/>
+    </graph>
+    <key attr.name="positionX" attr.type="string" id="positionX"/>
+</graphml>

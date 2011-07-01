@@ -14,7 +14,70 @@ class GraphMLParser:
         """
         """
 
+    def write(self, graph, fname):
+        """
+        """
 
+        doc = minidom.Document()
+
+        root = doc.createElement('graphml')
+        doc.appendChild(root)
+        
+        graph_node = doc.createElement('graph')
+        graph_node.setAttribute('id', graph.name)
+        if graph.directed:
+            graph_node.setAttribute('edgedefault', 'directed')
+        else:
+            graph_node.setAttribute('edgedefault', 'undirected')
+        root.appendChild(graph_node)
+
+        attr = []
+        
+        # Add nodes
+        for n in graph.nodes():
+
+            node = doc.createElement('node')
+            node.setAttribute('id', n['label'])
+            for a in n.attributes():
+                if a != 'label':
+
+                    if a not in attr:
+                        attr_node = doc.createElement('key')
+                        attr_node.setAttribute('id', a)
+                        attr_node.setAttribute('attr.name', a)
+                        attr_node.setAttribute('attr.type', 'string')
+                        root.appendChild(attr_node)
+                    
+                    data = doc.createElement('data')
+                    data.setAttribute('key', a)
+                    data.appendChild(doc.createTextNode(str(n[a])))
+                    node.appendChild(data)
+            graph_node.appendChild(node)
+
+        for e in graph.edges():
+
+            edge = doc.createElement('edge')
+            edge.setAttribute('source', e.node1['label'])
+            edge.setAttribute('target', e.node2['label'])
+            for a in e.attributes():
+                if e != 'label':
+
+                    if a not in attr:
+                        attr_node = doc.createElement('key')
+                        attr_node.setAttribute('id', a)
+                        attr_node.setAttribute('attr.name', a)
+                        attr_node.setAttribute('attr.type', 'string')
+                        root.appendChild(attr_node)
+                    
+                    data = doc.createElement('data')
+                    data.setAttribute('key', a)
+                    data.appendChild(doc.createTextNode(e[a]))
+                    node.appendChild(data)
+            graph_node.appendChild(edge)
+
+        f = open(fname, 'w')
+        f.write(doc.toprettyxml(indent = '    '))
+    
     def parse(self, fname):
         """
         """

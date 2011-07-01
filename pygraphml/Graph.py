@@ -16,6 +16,7 @@ class Graph:
         self._nodes = []
         self._edges = []
         self._root = None
+        self.directed = True
 
     def DFS_prefix(self, root = None):
         """

@@ -43,3 +43,9 @@ class Item(object):
         """
 
         return self.attr[name].value
+
+    def attributes(self):
+        """
+        """
+
+        return self.attr
