@@ -1,0 +1,75 @@
+\begin{theindex}
+\def\bigletter#1{{\Large\sffamily#1}\nopagebreak\vspace{1mm}}
+
+  \bigletter A
+  \item add\_edge() (Graph.Graph method), \hyperpage{4}
+  \item add\_edge\_by\_label() (Graph.Graph method), \hyperpage{4}
+  \item add\_node() (Graph.Graph method), \hyperpage{4}
+  \item Attribute (class in Attribute), \hyperpage{5}
+  \item attributes() (Item.Item method), \hyperpage{5}
+
+  \indexspace
+  \bigletter B
+  \item BFS() (Graph.Graph method), \hyperpage{4}
+
+  \indexspace
+  \bigletter C
+  \item child() (Edge.Edge method), \hyperpage{4}
+  \item children() (Graph.Graph method), \hyperpage{4}
+  \item children() (Node.Node method), \hyperpage{4}
+
+  \indexspace
+  \bigletter D
+  \item DFS\_prefix() (Graph.Graph method), \hyperpage{4}
+  \item directed() (Edge.Edge method), \hyperpage{4}
+
+  \indexspace
+  \bigletter E
+  \item Edge (class in Edge), \hyperpage{4}
+  \item edges() (Graph.Graph method), \hyperpage{4}
+  \item edges() (Node.Node method), \hyperpage{4}
+
+  \indexspace
+  \bigletter G
+  \item get\_depth() (Graph.Graph method), \hyperpage{4}
+  \item Graph (class in Graph), \hyperpage{3}
+  \item GraphMLParser (class in GraphMLParser), \hyperpage{5}
+
+  \indexspace
+  \bigletter I
+  \item Item (class in Item), \hyperpage{5}
+
+  \indexspace
+  \bigletter N
+  \item Node (class in Node), \hyperpage{4}
+  \item node() (Edge.Edge method), \hyperpage{4}
+  \item nodes() (Graph.Graph method), \hyperpage{4}
+
+  \indexspace
+  \bigletter P
+  \item parent() (Edge.Edge method), \hyperpage{5}
+  \item parent() (Node.Node method), \hyperpage{4}
+  \item parse() (GraphMLParser.GraphMLParser method), \hyperpage{5}
+  \item Point (class in Point), \hyperpage{5}
+  \item pygraphml (module), \hyperpage{3}
+
+  \indexspace
+  \bigletter R
+  \item root() (Graph.Graph method), \hyperpage{4}
+
+  \indexspace
+  \bigletter S
+  \item set\_directed() (Edge.Edge method), \hyperpage{5}
+  \item set\_root() (Graph.Graph method), \hyperpage{4}
+  \item set\_root\_by\_attribute() (Graph.Graph method), \hyperpage{4}
+  \item show() (Graph.Graph method), \hyperpage{4}
+
+  \indexspace
+  \bigletter V
+  \item vectorize() (Point.Point method), \hyperpage{5}
+
+  \indexspace
+  \bigletter W
+  \item write() (GraphMLParser.GraphMLParser method), \hyperpage{5}
+
+\end{theindex}

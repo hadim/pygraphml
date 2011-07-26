@@ -83,7 +83,6 @@ class GraphMLParser:
         """
 
         dom = minidom.parse(open(fname, 'r'))
-
         root = dom.getElementsByTagName("graphml")[0]
         graph = root.getElementsByTagName("graph")[0]
         name = graph.getAttribute('id')

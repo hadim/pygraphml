@@ -1,0 +1,8 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Contents}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Getting started}{3}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Using the bindings from the Python Interpreter}{3}{subsection.1.1.1}
+\contentsline {section}{\numberline {1.2}\texttt {pygraphml} -- API documentation}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}Indices and tables}{7}{chapter.2}
+\contentsline {chapter}{Python Module Index}{9}{section*.36}
+\contentsline {chapter}{Index}{11}{section*.37}

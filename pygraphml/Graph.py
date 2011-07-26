@@ -3,8 +3,13 @@
 from Node import *
 from Edge import *
 
+from collections import deque
+
 class Graph:
     """
+    Main class which represent a Graph
+
+    :param name: name of the graph
     """
 
     def __init__(self, name = ""):
@@ -18,8 +23,17 @@ class Graph:
         self._root = None
         self.directed = True
 
+        self.i = 0
+
     def DFS_prefix(self, root = None):
         """
+        Depth-first search.
+
+        .. seealso::
+           `Wikipedia descritpion <http://en.wikipedia.org/wiki/Depth-first_search>`_
+
+        :param root: first to start the search
+        :return: list of nodes
         """
 
         if not root:
@@ -32,10 +46,54 @@ class Graph:
         """
 
         nodes = [n]
+        n['depth'] = self.i
+
         for c in n.children():
             nodes += self._DFS_prefix(c, n)
+            self.i += 1
 
         return nodes
+
+    def BFS(self, root = None):
+        """
+        Breadth-first search.
+
+        .. seealso::
+           `Wikipedia descritpion <http://en.wikipedia.org/wiki/Breadth-first_search>`_
+
+        :param root: first to start the search
+        :return: list of nodes
+        """
+
+        if not root:
+            root = self.root()
+
+        queue = deque()
+        queue.append(self.root())
+
+        nodes = []
+
+        self.depth = 0
+        
+        while len(queue) > 0:
+            x = queue.popleft()
+            nodes.append(x)
+            
+            for child in x.children():
+                queue.append(child)
+
+        return nodes
+        
+    def get_depth(self, node):
+        """
+        """
+
+        depth = 0
+        while node.parent() and node != self.root():
+            node = node.parent()[0]
+            depth += 1
+
+        return depth
 
     def nodes(self, ):
         """
@@ -114,7 +172,7 @@ class Graph:
         """
 
         for n in self.nodes():
-            if n[attribute] == value:
+            if n[attribute] in value:
                 self.set_root(n)
                 return n
 
