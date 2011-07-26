@@ -1,0 +1,315 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pygraphml – API documentation &mdash; pyGraphML v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="pyGraphML v0.1 documentation" href="index.html" />
+    <link rel="prev" title="Getting started" href="gettingstarted.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="gettingstarted.html" title="Getting started"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">pyGraphML v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-pygraphml"></span><div class="section" id="pygraphml-api-documentation">
+<h1><a class="reference internal" href="#module-pygraphml"><tt class="xref py py-mod docutils literal"><span class="pre">pygraphml</span></tt></a> &#8211; API documentation<a class="headerlink" href="#pygraphml-api-documentation" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Graph.Graph">
+<em class="property">class </em><tt class="descclassname">Graph.</tt><tt class="descname">Graph</tt><big>(</big><em>name=''</em><big>)</big><a class="reference internal" href="_modules/Graph.html#Graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Graph.Graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main class which represent a Graph</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; name of the graph</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="Graph.Graph.BFS">
+<tt class="descname">BFS</tt><big>(</big><em>root=None</em><big>)</big><a class="reference internal" href="_modules/Graph.html#Graph.BFS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Graph.Graph.BFS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Breadth-first search.</p>
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://en.wikipedia.org/wiki/Breadth-first_search">Wikipedia descritpion</a></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>root</strong> &#8211; first to start the search</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of nodes</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Graph.Graph.DFS_prefix">
+<tt class="descname">DFS_prefix</tt><big>(</big><em>root=None</em><big>)</big><a class="reference internal" href="_modules/Graph.html#Graph.DFS_prefix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Graph.Graph.DFS_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Depth-first search.</p>
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://en.wikipedia.org/wiki/Depth-first_search">Wikipedia descritpion</a></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>root</strong> &#8211; first to start the search</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of nodes</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Graph.Graph.add_edge">
+<tt class="descname">add_edge</tt><big>(</big><em>n1</em>, <em>n2</em>, <em>directed=False</em><big>)</big><a class="reference internal" href="_modules/Graph.html#Graph.add_edge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Graph.Graph.add_edge" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Graph.Graph.add_edge_by_label">
+<tt class="descname">add_edge_by_label</tt><big>(</big><em>label1</em>, <em>label2</em><big>)</big><a class="reference internal" href="_modules/Graph.html#Graph.add_edge_by_label"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Graph.Graph.add_edge_by_label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Graph.Graph.add_node">
+<tt class="descname">add_node</tt><big>(</big><em>label=''</em><big>)</big><a class="reference internal" href="_modules/Graph.html#Graph.add_node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Graph.Graph.add_node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Graph.Graph.children">
+<tt class="descname">children</tt><big>(</big><em>node</em><big>)</big><a class="reference internal" href="_modules/Graph.html#Graph.children"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Graph.Graph.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Graph.Graph.edges">
+<tt class="descname">edges</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Graph.html#Graph.edges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Graph.Graph.edges" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Graph.Graph.get_depth">
+<tt class="descname">get_depth</tt><big>(</big><em>node</em><big>)</big><a class="reference internal" href="_modules/Graph.html#Graph.get_depth"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Graph.Graph.get_depth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Graph.Graph.nodes">
+<tt class="descname">nodes</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Graph.html#Graph.nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Graph.Graph.nodes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Graph.Graph.root">
+<tt class="descname">root</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Graph.html#Graph.root"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Graph.Graph.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Graph.Graph.set_root">
+<tt class="descname">set_root</tt><big>(</big><em>node</em><big>)</big><a class="reference internal" href="_modules/Graph.html#Graph.set_root"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Graph.Graph.set_root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Graph.Graph.set_root_by_attribute">
+<tt class="descname">set_root_by_attribute</tt><big>(</big><em>value</em>, <em>attribute='label'</em><big>)</big><a class="reference internal" href="_modules/Graph.html#Graph.set_root_by_attribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Graph.Graph.set_root_by_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Graph.Graph.show">
+<tt class="descname">show</tt><big>(</big><em>show_label=False</em><big>)</big><a class="reference internal" href="_modules/Graph.html#Graph.show"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Graph.Graph.show" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Node.Node">
+<em class="property">class </em><tt class="descclassname">Node.</tt><tt class="descname">Node</tt><a class="reference internal" href="_modules/Node.html#Node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Node.Node" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="Node.Node.children">
+<tt class="descname">children</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Node.html#Node.children"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Node.Node.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Node.Node.edges">
+<tt class="descname">edges</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Node.html#Node.edges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Node.Node.edges" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Node.Node.parent">
+<tt class="descname">parent</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Node.html#Node.parent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Node.Node.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Edge.Edge">
+<em class="property">class </em><tt class="descclassname">Edge.</tt><tt class="descname">Edge</tt><big>(</big><em>node1</em>, <em>node2</em>, <em>directed=False</em><big>)</big><a class="reference internal" href="_modules/Edge.html#Edge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Edge.Edge" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="Edge.Edge.child">
+<tt class="descname">child</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Edge.html#Edge.child"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Edge.Edge.child" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Edge.Edge.directed">
+<tt class="descname">directed</tt><big>(</big><em>dir</em><big>)</big><a class="reference internal" href="_modules/Edge.html#Edge.directed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Edge.Edge.directed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Edge.Edge.node">
+<tt class="descname">node</tt><big>(</big><em>node</em><big>)</big><a class="reference internal" href="_modules/Edge.html#Edge.node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Edge.Edge.node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the other node</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Edge.Edge.parent">
+<tt class="descname">parent</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Edge.html#Edge.parent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Edge.Edge.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Edge.Edge.set_directed">
+<tt class="descname">set_directed</tt><big>(</big><em>dir</em><big>)</big><a class="reference internal" href="_modules/Edge.html#Edge.set_directed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Edge.Edge.set_directed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Attribute.Attribute">
+<em class="property">class </em><tt class="descclassname">Attribute.</tt><tt class="descname">Attribute</tt><big>(</big><em>name</em>, <em>value</em>, <em>type='string'</em><big>)</big><a class="reference internal" href="_modules/Attribute.html#Attribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Attribute.Attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="Item.Item">
+<em class="property">class </em><tt class="descclassname">Item.</tt><tt class="descname">Item</tt><a class="reference internal" href="_modules/Item.html#Item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Item.Item" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="Item.Item.attributes">
+<tt class="descname">attributes</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Item.html#Item.attributes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Item.Item.attributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Point.Point">
+<em class="property">class </em><tt class="descclassname">Point.</tt><tt class="descname">Point</tt><big>(</big><em>x=0</em>, <em>y=0</em>, <em>z=0</em><big>)</big><a class="reference internal" href="_modules/Point.html#Point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Point.Point" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="Point.Point.vectorize">
+<tt class="descname">vectorize</tt><big>(</big><em>point</em><big>)</big><a class="reference internal" href="_modules/Point.html#Point.vectorize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Point.Point.vectorize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GraphMLParser.GraphMLParser">
+<em class="property">class </em><tt class="descclassname">GraphMLParser.</tt><tt class="descname">GraphMLParser</tt><a class="reference internal" href="_modules/GraphMLParser.html#GraphMLParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GraphMLParser.GraphMLParser" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="GraphMLParser.GraphMLParser.parse">
+<tt class="descname">parse</tt><big>(</big><em>fname</em><big>)</big><a class="reference internal" href="_modules/GraphMLParser.html#GraphMLParser.parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GraphMLParser.GraphMLParser.parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="GraphMLParser.GraphMLParser.write">
+<tt class="descname">write</tt><big>(</big><em>graph</em>, <em>fname</em><big>)</big><a class="reference internal" href="_modules/GraphMLParser.html#GraphMLParser.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GraphMLParser.GraphMLParser.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gettingstarted.html"
+                        title="previous chapter">Getting started</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/reference.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="gettingstarted.html" title="Getting started"
+             >previous</a> |</li>
+        <li><a href="index.html">pyGraphML v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Hadrien Mary.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.1.
+    </div>
+  </body>
+</html>
