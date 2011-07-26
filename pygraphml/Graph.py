@@ -9,8 +9,6 @@ class Graph:
     """
     Main class which represent a Graph
 
-    :author: fsdfsf
-
     :param name: name of the graph
     """
 
