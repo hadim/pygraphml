@@ -3,7 +3,7 @@
 :mod:`pygraphml` -- API documentation
 =====================================
 
-.. autoclass:: Graph.Graph
+.. automodule:: Graph
    :members:
 
 .. autoclass:: Node.Node

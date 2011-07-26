@@ -9,6 +9,8 @@ class Graph:
     """
     Main class which represent a Graph
 
+    :author: fsdfsf
+
     :param name: name of the graph
     """
 
@@ -30,7 +32,7 @@ class Graph:
         Depth-first search.
 
         .. seealso::
-           `Wikipedia descritpion <http://en.wikipedia.org/wiki/Depth-first_search>`_
+           `Wikipedia DFS descritpion <http://en.wikipedia.org/wiki/Depth-first_search>`_
 
         :param root: first to start the search
         :return: list of nodes
@@ -59,10 +61,12 @@ class Graph:
         Breadth-first search.
 
         .. seealso::
-           `Wikipedia descritpion <http://en.wikipedia.org/wiki/Breadth-first_search>`_
+           `Wikipedia BFS descritpion <http://en.wikipedia.org/wiki/Breadth-first_search>`_
 
         :param root: first to start the search
         :return: list of nodes
+
+        
         """
 
         if not root:
