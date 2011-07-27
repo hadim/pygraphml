@@ -22,6 +22,14 @@ class GraphMLParser:
 
         root = doc.createElement('graphml')
         doc.appendChild(root)
+
+        # Add attributs
+        for a in graph.get_attributs():
+            attr_node = doc.createElement('key')
+            attr_node.setAttribute('id', a.name)
+            attr_node.setAttribute('attr.name', a.name)
+            attr_node.setAttribute('attr.type', 'string')
+            root.appendChild(attr_node)
         
         graph_node = doc.createElement('graph')
         graph_node.setAttribute('id', graph.name)
@@ -31,8 +39,6 @@ class GraphMLParser:
             graph_node.setAttribute('edgedefault', 'undirected')
         root.appendChild(graph_node)
 
-        attr = []
-        
         # Add nodes
         for n in graph.nodes():
 
@@ -40,14 +46,6 @@ class GraphMLParser:
             node.setAttribute('id', n['label'])
             for a in n.attributes():
                 if a != 'label':
-
-                    if a not in attr:
-                        attr_node = doc.createElement('key')
-                        attr_node.setAttribute('id', a)
-                        attr_node.setAttribute('attr.name', a)
-                        attr_node.setAttribute('attr.type', 'string')
-                        root.appendChild(attr_node)
-                    
                     data = doc.createElement('data')
                     data.setAttribute('key', a)
                     data.appendChild(doc.createTextNode(str(n[a])))
@@ -61,14 +59,6 @@ class GraphMLParser:
             edge.setAttribute('target', e.node2['label'])
             for a in e.attributes():
                 if e != 'label':
-
-                    if a not in attr:
-                        attr_node = doc.createElement('key')
-                        attr_node.setAttribute('id', a)
-                        attr_node.setAttribute('attr.name', a)
-                        attr_node.setAttribute('attr.type', 'string')
-                        root.appendChild(attr_node)
-                    
                     data = doc.createElement('data')
                     data.setAttribute('key', a)
                     data.appendChild(doc.createTextNode(e[a]))

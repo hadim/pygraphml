@@ -178,6 +178,27 @@ class Graph:
                 self.set_root(n)
                 return n
 
+    def get_attributs(self):
+        """
+        """
+
+        attr = []
+        attr_obj = []
+        for n in self.nodes():
+            for a in n.attr:
+                if a not in attr:
+                    attr.append(a)
+                    attr_obj.append(n.attr[a])
+
+        for e in self.edges():
+            for a in e.attr:
+                if a not in attr:
+                    attr.append(a)
+                    attr_obj.append(e.attr[a])
+
+        return attr_obj
+            
+
     def show(self, show_label = False):
         """
         """

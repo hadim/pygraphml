@@ -9,7 +9,7 @@ class Attribute:
         """
 
         self.name = name
-        self.value = value
+        self.value = str(value)
         self.type = type
 
     def __str__(self):
