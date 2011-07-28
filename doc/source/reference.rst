@@ -1,5 +1,4 @@
 .. _pygraphml-reference:
-.. py:module:: pygraphml
 
 :mod:`pygraphml` -- API documentation
 =====================================

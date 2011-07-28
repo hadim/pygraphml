@@ -54,18 +54,146 @@
 <span id="pygraphml-usage"></span><h1>Usage example<a class="headerlink" href="#usage-example" title="Permalink to this headline">¶</a></h1>
 <p>This page introduces you to PyGraphML. If you want to skip this step
 and directly play with API documentation, go to
-<em class="xref std std-ref">pygraphml-reference</em>.</p>
+<a class="reference internal" href="reference.html#pygraphml-reference"><em>pygraphml &#8211; API documentation</em></a>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Documentation is still incomplete. Be patient and do not hesitate
+to report bug.</p>
+</div>
+<div class="section" id="test-if-pygraphml-is-working">
+<h2>Test if PyGraphML is working<a class="headerlink" href="#test-if-pygraphml-is-working" title="Permalink to this headline">¶</a></h2>
+<p>First, open a Python console and try import PyGraphML</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pygraphml</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>If there is not <tt class="docutils literal"><span class="pre">ImportError</span></tt> message, PyGraphML is well detected by
+your python installation.</p>
+</div>
 <div class="section" id="create-a-graph">
 <h2>Create a graph<a class="headerlink" href="#create-a-graph" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s create a simple graph with 5 nodes and some edges between this
+nodes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#-*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">pygraphml.Graph</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pygraphml.Node</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pygraphml.Edge</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c"># Create graph</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
+
+<span class="n">n1</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">)</span>
+<span class="n">n3</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
+<span class="n">n4</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s">&quot;D&quot;</span><span class="p">)</span>
+<span class="n">n5</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s">&quot;E&quot;</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">n3</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">n2</span><span class="p">,</span> <span class="n">n3</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">n3</span><span class="p">,</span> <span class="n">n4</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">n3</span><span class="p">,</span> <span class="n">n5</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="visualize-a-graph-with-networkx">
 <h2>Visualize a graph with NetworkX<a class="headerlink" href="#visualize-a-graph-with-networkx" title="Permalink to this headline">¶</a></h2>
+<p>If you have <a class="reference external" href="https://github.com/hadim/pygraphml">NetworkX</a> installed, you can visualize the
+graph.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Visualization is very basic and serves only to quickly check
+graph consistent.</p>
+</div>
+<p>It is very simple to visualize graph:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">g</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>You should see something like that:</p>
+<a class="reference internal image-reference" href="_images/graph.png"><img alt="_images/graph.png" class="align-center" src="_images/graph.png" style="width: 400.0px; height: 300.0px;" /></a>
 </div>
 <div class="section" id="write-a-graph-into-graphml-file">
 <h2>Write a graph into GraphML file<a class="headerlink" href="#write-a-graph-into-graphml-file" title="Permalink to this headline">¶</a></h2>
+<p>Now you may want to write your graph into a GraphML file. This is a
+way:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#-*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">pygraphml.GraphMLParser</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pygraphml.Graph</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pygraphml.Node</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pygraphml.Edge</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c"># Create graph</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
+
+<span class="n">n1</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">)</span>
+<span class="n">n3</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
+<span class="n">n4</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s">&quot;D&quot;</span><span class="p">)</span>
+<span class="n">n5</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s">&quot;E&quot;</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">n3</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">n2</span><span class="p">,</span> <span class="n">n3</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">n3</span><span class="p">,</span> <span class="n">n4</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">n3</span><span class="p">,</span> <span class="n">n5</span><span class="p">)</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">GraphMLParser</span><span class="p">()</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="s">&quot;myGraph.graphml&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Don&#8217;t forget to import <tt class="docutils literal"><span class="pre">GraphMLParser</span></tt></p>
+</div>
+<p>GraphML file should look like that</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+    <span class="nt">&lt;graphml&gt;</span>
+        <span class="nt">&lt;key</span> <span class="na">attr.name=</span><span class="s">&quot;label&quot;</span> <span class="na">attr.type=</span><span class="s">&quot;string&quot;</span> <span class="na">id=</span><span class="s">&quot;label&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;graph</span> <span class="na">edgedefault=</span><span class="s">&quot;directed&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;node</span> <span class="na">id=</span><span class="s">&quot;A&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;node</span> <span class="na">id=</span><span class="s">&quot;B&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;node</span> <span class="na">id=</span><span class="s">&quot;C&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;node</span> <span class="na">id=</span><span class="s">&quot;D&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;node</span> <span class="na">id=</span><span class="s">&quot;E&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;edge</span> <span class="na">source=</span><span class="s">&quot;A&quot;</span> <span class="na">target=</span><span class="s">&quot;C&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;edge</span> <span class="na">source=</span><span class="s">&quot;B&quot;</span> <span class="na">target=</span><span class="s">&quot;C&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;edge</span> <span class="na">source=</span><span class="s">&quot;C&quot;</span> <span class="na">target=</span><span class="s">&quot;D&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;edge</span> <span class="na">source=</span><span class="s">&quot;C&quot;</span> <span class="na">target=</span><span class="s">&quot;E&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/graph&gt;</span>
+    <span class="nt">&lt;/graphml&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="read-a-graph-from-graphml-file">
 <h2>Read a graph from GraphML file<a class="headerlink" href="#read-a-graph-from-graphml-file" title="Permalink to this headline">¶</a></h2>
+<p>Now let&#8217;s learn how to read a graph from a GraphML file. We will take
+the previous generated GraphML file, load it in Python and display it
+with <a class="reference external" href="https://github.com/hadim/pygraphml">NetworkX</a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">parser</span> <span class="o">=</span> <span class="n">GraphMLParser</span><span class="p">()</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s">&quot;myGraph.graphml&quot;</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="nodes-and-edges-attributes-management">
+<h2>Nodes and edges attributes management<a class="headerlink" href="#nodes-and-edges-attributes-management" title="Permalink to this headline">¶</a></h2>
+<p>GraphML format has a flexible attributes management as PyGraphML. To
+add an attribute to a node or an item, simply use Python power:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">g</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s">&#39;label&#39;</span><span class="p">)</span>
+
+<span class="c"># Add attribute</span>
+<span class="n">n</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;red&#39;</span>
+
+<span class="c"># Read attribute</span>
+<span class="k">print</span> <span class="n">n</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>All attributes will be copied in GraphML file. As well when you read a
+GraphML file, attributes are available by the same way.</p>
 </div>
 </div>
 
@@ -78,10 +206,12 @@ and directly play with API documentation, go to
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Usage example</a><ul>
+<li><a class="reference internal" href="#test-if-pygraphml-is-working">Test if PyGraphML is working</a></li>
 <li><a class="reference internal" href="#create-a-graph">Create a graph</a></li>
 <li><a class="reference internal" href="#visualize-a-graph-with-networkx">Visualize a graph with NetworkX</a></li>
 <li><a class="reference internal" href="#write-a-graph-into-graphml-file">Write a graph into GraphML file</a></li>
 <li><a class="reference internal" href="#read-a-graph-from-graphml-file">Read a graph from GraphML file</a></li>
+<li><a class="reference internal" href="#nodes-and-edges-attributes-management">Nodes and edges attributes management</a></li>
 </ul>
 </li>
 </ul>
