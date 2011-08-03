@@ -52,6 +52,7 @@ class GraphMLParser:
                     node.appendChild(data)
             graph_node.appendChild(node)
 
+        # Add edges
         for e in graph.edges():
 
             edge = doc.createElement('edge')
@@ -62,7 +63,7 @@ class GraphMLParser:
                     data = doc.createElement('data')
                     data.setAttribute('key', a)
                     data.appendChild(doc.createTextNode(e[a]))
-                    node.appendChild(data)
+                    edge.appendChild(data)
             graph_node.appendChild(edge)
 
         f = open(fname, 'w')
