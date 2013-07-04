@@ -5,7 +5,7 @@ What is pygraphml ?
 pygraphml is a small Python library designed to parse GraphML file. To
 see specification about GraphML, see http://graphml.graphdrawing.org/
 
-Documentation and tutorial are available there: http://hadim.github.com/pygraphml/
+Documentation and tutorial are available there: http://hadim.github.io/pygraphml/
 
 ============
 Requirements
