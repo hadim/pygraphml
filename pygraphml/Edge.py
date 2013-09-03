@@ -45,7 +45,7 @@ class Edge(Item):
         return self.node2
     
 
-    def directed(self, dir):
+    def directed(self):
         """
         """
 
