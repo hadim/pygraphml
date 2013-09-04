@@ -58,6 +58,8 @@ class GraphMLParser:
             edge = doc.createElement('edge')
             edge.setAttribute('source', e.node1['label'])
             edge.setAttribute('target', e.node2['label'])
+            if e.directed() != graph.directed:
+                edge.setAttribute('directed', 'true' if e.directed() else 'false')
             for a in e.attributes():
                 if e != 'label':
                     data = doc.createElement('data')
