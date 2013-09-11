@@ -28,7 +28,7 @@ class GraphMLParser:
             attr_node = doc.createElement('key')
             attr_node.setAttribute('id', a.name)
             attr_node.setAttribute('attr.name', a.name)
-            attr_node.setAttribute('attr.type', 'string')
+            attr_node.setAttribute('attr.type', a.type)
             root.appendChild(attr_node)
         
         graph_node = doc.createElement('graph')
