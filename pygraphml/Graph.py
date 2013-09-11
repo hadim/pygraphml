@@ -149,7 +149,7 @@ class Graph:
         for n in self._nodes:
             if n['label'] == label1:
                 n1 = n
-            elif n['label'] == label2:
+            if n['label'] == label2:
                 n2 = n
 
         if n1 and n2:
