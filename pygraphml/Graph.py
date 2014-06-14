@@ -230,3 +230,79 @@ class Graph:
         nx.draw(G)
         plt.show()
         
+class NoDupesGraph(Graph):
+    '''Add nodes without worrying if it is a duplicate.
+       Add edges without worrying if nodes exist   '''
+
+    def __init__(self,*args,**kwargs):
+        Graph.__init__(self,*args,**kwargs)
+        self._nodes = {}
+
+    def nodes(self):
+        return self._nodes.values()
+
+    def add_node(self,label):
+      '''Return a node with label. Create node if label is new'''
+      try:
+          n = self._nodes[label]
+      except KeyError:
+          n = Node()
+          n['label'] = label
+          self._nodes[label]=n
+      return n
+
+    def add_edge(self, n1_label, n2_label,directed=False):
+      """
+      Get or create edges using get_or_create_node
+      """ 
+      n1 = self.add_node(n1_label)
+      n2 = self.add_node(n2_label)
+      e = Edge(n1, n2, directed)
+      self._edges.append(e)
+      return e
+
+    def flush_empty_nodes(self):
+        '''not implemented'''
+        pass
+
+    def condense_edges(self):
+        '''if a node connects to only two edges, combine those
+        edges and delete the node.
+        
+        not implemented
+        '''
+        pass
+
+if __name__ == '__main__':
+
+    import GraphMLParser
+    parser = GraphMLParser.GraphMLParser()
+    import random
+    import timeit
+
+    def no_dupes_test():
+     graph = NoDupesGraph()
+     n0 = graph.add_node(label='first')
+     for x in range (20000):
+        x = str(random.random())
+        n1 = graph.add_node(label=x)
+        graph.add_edge(n0['label'],n1['label'])
+        n0=n1
+     #parser.write(graph,'/dev/null')
+
+    def vanilla_graph_test():
+     graph = Graph()
+     n0 = graph.add_node(label='first')
+     for x in range (20000):
+        x = str(random.random())
+        n1 = graph.add_node(label=x)
+        graph.add_edge(n0,n1)
+        n0=n1
+     #parser.write(graph,'/dev/null')
+
+    number = 5
+    print "No Dupes Test: "
+    print '  %s' % timeit.timeit('no_dupes_test()',setup='from __main__ import no_dupes_test',number=number)
+
+    print "Vanilla Graph Test: "
+    print '  %s' % timeit.timeit('vanilla_graph_test()',setup='from __main__ import vanilla_graph_test',number=number)
