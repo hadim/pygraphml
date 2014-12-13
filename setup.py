@@ -1,6 +1,6 @@
 import os
 
-from distutils.core import setup
+from setuptools import setup
 
 def read(*paths):
     """Build a file path from *paths* and return the contents."""
