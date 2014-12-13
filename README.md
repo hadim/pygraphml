@@ -17,5 +17,5 @@ Under BSD license. See [LICENSE](LICENSE).
 
 # Authors
 
-Hadrien Mary <hadrien.mary@gmail.com>
-Nick Hamilton <n.hamilton@imb.uq.edu.au>
+- Hadrien Mary <hadrien.mary@gmail.com>
+- Nick Hamilton <n.hamilton@imb.uq.edu.au>
