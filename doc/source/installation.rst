@@ -1,7 +1,7 @@
 .. _pygraphml-installation:
 
-Download and install
-====================
+Installation
+============
 
 With pip::
 

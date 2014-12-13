@@ -176,5 +176,6 @@ pseudoxml:
 	@echo
 	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
 
+.PHONY: gh-pages
 gh-pages:
 	./deploy-doc.sh
