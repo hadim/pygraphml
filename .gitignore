@@ -5,3 +5,5 @@ doc/build/
 doc/gh-pages/
 dist
 MANIFEST
+build/
+*.egg-info
