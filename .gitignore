@@ -3,3 +3,5 @@ doc/build/
 .ipynb_checkpoints
 *__pycache__*
 doc/gh-pages/
+dist
+MANIFEST
