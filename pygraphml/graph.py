@@ -1,7 +1,12 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
-from Node import *
-from Edge import *
+from __future__ import unicode_literals
+from __future__ import division
+from __future__ import absolute_import
+from __future__ import print_function
+
+from . import Node
+from . import Edge
 
 from collections import deque
 
@@ -42,7 +47,7 @@ class Graph:
         return self._DFS_prefix(root)
 
     def _DFS_prefix(self, n, parent = None):
-        """	
+        """
         """
 
         nodes = [n]
@@ -64,7 +69,7 @@ class Graph:
         :param root: first to start the search
         :return: list of nodes
 
-        
+
         """
 
         if not root:
@@ -76,16 +81,16 @@ class Graph:
         nodes = []
 
         self.depth = 0
-        
+
         while len(queue) > 0:
             x = queue.popleft()
             nodes.append(x)
-            
+
             for child in x.children():
                 queue.append(child)
 
         return nodes
-        
+
     def get_depth(self, node):
         """
         """
@@ -197,14 +202,13 @@ class Graph:
                     attr_obj.append(e.attr[a])
 
         return attr_obj
-            
 
-    def show(self, show_label = False):
+
+    def show(self, show_label=False):
         """
         """
 
         import matplotlib
-        matplotlib.use('GTKAgg')
 
         import matplotlib.pyplot as plt
         import networkx as nx
@@ -228,8 +232,12 @@ class Graph:
             G.add_edge(n1_label, n2_label)
 
         nx.draw(G)
+
+        if show_label:
+            nx.draw_networkx_labels(G, pos=nx.spring_layout(G))
+
         plt.show()
-        
+
 class NoDupesGraph(Graph):
     '''Add nodes without worrying if it is a duplicate.
        Add edges without worrying if nodes exist   '''
@@ -254,7 +262,7 @@ class NoDupesGraph(Graph):
     def add_edge(self, n1_label, n2_label,directed=False):
       """
       Get or create edges using get_or_create_node
-      """ 
+      """
       n1 = self.add_node(n1_label)
       n2 = self.add_node(n2_label)
       e = Edge(n1, n2, directed)
@@ -268,7 +276,7 @@ class NoDupesGraph(Graph):
     def condense_edges(self):
         '''if a node connects to only two edges, combine those
         edges and delete the node.
-        
+
         not implemented
         '''
         pass
@@ -301,8 +309,8 @@ if __name__ == '__main__':
      #parser.write(graph,'/dev/null')
 
     number = 5
-    print "No Dupes Test: "
-    print '  %s' % timeit.timeit('no_dupes_test()',setup='from __main__ import no_dupes_test',number=number)
+    print("No Dupes Test: ")
+    print('  %s'.format(timeit.timeit('no_dupes_test()',setup='from __main__ import no_dupes_test',number=number)))
 
-    print "Vanilla Graph Test: "
-    print '  %s' % timeit.timeit('vanilla_graph_test()',setup='from __main__ import vanilla_graph_test',number=number)
+    print("Vanilla Graph Test: ")
+    print('  %s'.format(timeit.timeit('vanilla_graph_test()',setup='from __main__ import vanilla_graph_test', number=number)))

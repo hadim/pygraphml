@@ -17,7 +17,7 @@ Test if PyGraphML is working
 First, open a Python console and try import PyGraphML
 
 >>> import pygraphml
->>> 
+>>>
 
 
 If there is not ``ImportError`` message, PyGraphML is well detected by
@@ -144,7 +144,7 @@ add an attribute to a node or an item, simply use Python power::
 
   g = Graph()
   n = g.add_node('label')
-  
+
   # Add attribute
   n['color'] = 'red'
 

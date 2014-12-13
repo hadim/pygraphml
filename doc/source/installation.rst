@@ -3,14 +3,14 @@
 Download and install
 ====================
 
-First, get PyGraphML at http://github.com/hadim/pygraphml.
+With pip::
 
-.. warning::
-   There is no installation process for now. Just modify your PYTHONPATH
-   according to PyGraphML location.
+    pip install pygraphml
 
-.. note::
-   Installation process is coming soon.
+Or clone repo::
+
+    git clone https://github.com/hadim/pygraphml.git
+    cd pygraphml/
+    pip install .
 
 Next see :ref:`pygraphml-usage`
-

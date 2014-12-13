@@ -3,27 +3,26 @@
 :mod:`pygraphml` -- API documentation
 =====================================
 
-.. warning::
-   The API documentation is still very poor. More documentation is
-   coming soon.
-
-.. automodule:: Graph
+.. automodule:: pygraphml
    :members:
 
-.. autoclass:: Node.Node
+.. autoclass:: Graph
    :members:
 
-.. autoclass:: Edge.Edge
+.. autoclass:: Node
    :members:
 
-.. autoclass:: Attribute.Attribute
+.. autoclass:: Edge
    :members:
 
-.. autoclass:: Item.Item
+.. autoclass:: Attribute
    :members:
 
-.. autoclass:: Point.Point
+.. autoclass:: Item
    :members:
 
-.. autoclass:: GraphMLParser.GraphMLParser
+.. autoclass:: Point
+   :members:
+
+.. autoclass:: GraphMLParser
    :members:

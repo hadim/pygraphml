@@ -1,6 +1,12 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
-from Item import *
+from __future__ import unicode_literals
+from __future__ import division
+from __future__ import absolute_import
+from __future__ import print_function
+
+
+from . import Item
 
 class Node(Item):
     """
@@ -19,7 +25,7 @@ class Node(Item):
         """
 
         return self._edges
-        
+
 
     def children(self):
         """
@@ -42,4 +48,4 @@ class Node(Item):
                 parent.append(e.parent())
 
         return parent
-                               
+

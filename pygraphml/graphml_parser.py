@@ -1,10 +1,16 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
+from __future__ import division
+from __future__ import absolute_import
+from __future__ import print_function
+
 
 from xml.dom import minidom
 
-from Graph import *
-from Node import *
-from Edge import *
+from . import Graph
+from . import Node
+from . import Edge
 
 class GraphMLParser:
     """
@@ -30,7 +36,7 @@ class GraphMLParser:
             attr_node.setAttribute('attr.name', a.name)
             attr_node.setAttribute('attr.type', a.type)
             root.appendChild(attr_node)
-        
+
         graph_node = doc.createElement('graph')
         graph_node.setAttribute('id', graph.name)
         if graph.directed:
@@ -70,7 +76,7 @@ class GraphMLParser:
 
         f = open(fname, 'w')
         f.write(doc.toprettyxml(indent = '    '))
-    
+
     def parse(self, fname):
         """
         """
@@ -118,5 +124,5 @@ if __name__ == '__main__':
     g = parser.parse('test.graphml')
 
     g.show(True)
-    
-        
+
+

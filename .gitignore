@@ -1,2 +1,4 @@
 *.pyc
-
+doc/build/
+.ipynb_checkpoints
+*__pycache__*

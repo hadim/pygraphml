@@ -1,6 +1,12 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
-from Item import *
+from __future__ import unicode_literals
+from __future__ import division
+from __future__ import absolute_import
+from __future__ import print_function
+
+
+from . import Item
 
 class Edge(Item):
     """
@@ -43,7 +49,7 @@ class Edge(Item):
         """
 
         return self.node2
-    
+
 
     def directed(self):
         """
@@ -56,4 +62,4 @@ class Edge(Item):
         """
 
         self._directed = dir
-        
+

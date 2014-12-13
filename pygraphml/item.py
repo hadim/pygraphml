@@ -1,6 +1,12 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
-from Attribute import *
+from __future__ import unicode_literals
+from __future__ import division
+from __future__ import absolute_import
+from __future__ import print_function
+
+
+from . import Attribute
 
 class Item(object):
     """
@@ -25,7 +31,7 @@ class Item(object):
 
         s += "ID: %i" % self.id
         s += "\n"
-        
+
         for a in self.attr:
             s += "%s : %s" % (self.attr[a].name, str(self.attr[a].value))
             s += "\n"
