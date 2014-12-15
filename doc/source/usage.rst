@@ -7,10 +7,6 @@ This page introduces you to PyGraphML. If you want to skip this step
 and directly play with API documentation, go to
 :ref:`pygraphml-reference`.
 
-.. warning::
-   Documentation is still incomplete. Be patient and do not hesitate
-   to report bug.
-
 Test if PyGraphML is working
 ----------------------------
 
@@ -20,7 +16,7 @@ First, open a Python console and try import PyGraphML
 >>>
 
 
-If there is not ``ImportError`` message, PyGraphML is well detected by
+If there is no ``ImportError`` message, PyGraphML is well detected by
 your python installation.
 
 Create a graph
@@ -28,8 +24,6 @@ Create a graph
 
 Let's create a simple graph with 5 nodes and some edges between this
 nodes::
-
-  #-*- coding: utf-8 -*-
 
   from pygraphml import Graph
 
@@ -47,6 +41,19 @@ nodes::
   g.add_edge(n2, n3)
   g.add_edge(n3, n4)
   g.add_edge(n3, n5)
+
+Graph search
+------------
+
+You can use `breadth-first search <http://en.wikipedia.org/wiki/Breadth-first_search>`_ and `depth-first search <http://en.wikipedia.org/wiki/Depth-first_search>`_::
+
+    nodes = g.BFS()
+    for node in nodes:
+        print(node)
+
+    nodes = g.DFS_prefix()
+    for node in nodes:
+        print(node)
 
 Visualize a graph with NetworkX
 -------------------------------
@@ -73,8 +80,6 @@ Write a graph into GraphML file
 
 Now you may want to write your graph into a GraphML file. This is a
 way::
-
-   #-*- coding: utf-8 -*-
 
    from pygraphml import Graph
    from pygraphml import GraphMLParser

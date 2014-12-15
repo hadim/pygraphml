@@ -17,7 +17,7 @@ class Graph:
     :param name: name of the graph
     """
 
-    def __init__(self, name = ""):
+    def __init__(self, name=""):
         """
         """
 
@@ -30,7 +30,7 @@ class Graph:
 
         self.i = 0
 
-    def DFS_prefix(self, root = None):
+    def DFS_prefix(self, root=None):
         """
         Depth-first search.
 
@@ -46,7 +46,7 @@ class Graph:
 
         return self._DFS_prefix(root)
 
-    def _DFS_prefix(self, n, parent = None):
+    def _DFS_prefix(self, n, parent=None):
         """
         """
 
@@ -59,7 +59,7 @@ class Graph:
 
         return nodes
 
-    def BFS(self, root = None):
+    def BFS(self, root=None):
         """
         Breadth-first search.
 
@@ -120,7 +120,7 @@ class Graph:
 
         return node.children()
 
-    def add_node(self, label = ""):
+    def add_node(self, label=""):
         """
         """
 
@@ -130,7 +130,7 @@ class Graph:
 
         return n
 
-    def add_edge(self, n1, n2, directed = False):
+    def add_edge(self, n1, n2, directed=False):
         """
         """
 
@@ -174,7 +174,7 @@ class Graph:
 
         return self._root
 
-    def set_root_by_attribute(self, value, attribute = 'label'):
+    def set_root_by_attribute(self, value, attribute='label'):
         """
         """
 
