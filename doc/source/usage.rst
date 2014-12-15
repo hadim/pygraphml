@@ -31,9 +31,7 @@ nodes::
 
   #-*- coding: utf-8 -*-
 
-  from pygraphml.Graph import *
-  from pygraphml.Node import *
-  from pygraphml.Edge import *
+  from pygraphml import Graph
 
   # Create graph
 
@@ -78,10 +76,8 @@ way::
 
    #-*- coding: utf-8 -*-
 
-   from pygraphml.GraphMLParser import *
-   from pygraphml.Graph import *
-   from pygraphml.Node import *
-   from pygraphml.Edge import *
+   from pygraphml import Graph
+   from pygraphml import GraphMLParser
 
    # Create graph
 
