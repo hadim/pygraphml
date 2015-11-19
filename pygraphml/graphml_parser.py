@@ -22,8 +22,20 @@ class GraphMLParser:
 
     def write(self, graph, fname):
         """
+        Convert Graph() to xml and write to a file
+        :param graph:
+        :param fname:
+        :return:
         """
+        f = open(fname, 'w')
+        f.write(self.xml(graph))
 
+    def xml(self, graph):
+        """
+        Convert Graph() to xml
+        :param graph:
+        :return:
+        """
         doc = minidom.Document()
 
         root = doc.createElement('graphml')
@@ -74,8 +86,7 @@ class GraphMLParser:
                     edge.appendChild(data)
             graph_node.appendChild(edge)
 
-        f = open(fname, 'w')
-        f.write(doc.toprettyxml(indent = '    '))
+        return doc.toprettyxml(indent='    ')
 
     def parse(self, fname):
         """
