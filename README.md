@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/hadim/pygraphml.svg?branch=master)](https://travis-ci.org/hadim/pygraphml)
+
 # pygraphml
 
 `pygraphml` is a small Python library designed to parse GraphML file. To
