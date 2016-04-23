@@ -1,5 +1,8 @@
 [![Build Status](https://travis-ci.org/hadim/pygraphml.svg?branch=master)](https://travis-ci.org/hadim/pygraphml)
 
+[![DOI](https://zenodo.org/badge/4163/hadim/pygraphml.svg)](https://zenodo.org/badge/latestdoi/4163/hadim/pygraphml)
+
+
 # pygraphml
 
 `pygraphml` is a small Python library designed to parse GraphML file. To
@@ -15,6 +18,10 @@ Documentation and tutorial are available at http://hadim.github.io/pygraphml/. A
 # Install
 
 `pip install pygraphml`
+
+# How to cite
+
+If you use this library for your research, don't forget to cite it : [![DOI](https://zenodo.org/badge/4163/hadim/pygraphml.svg)](https://zenodo.org/badge/latestdoi/4163/hadim/pygraphml).
 
 # License
 
