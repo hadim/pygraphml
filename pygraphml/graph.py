@@ -76,11 +76,9 @@ class Graph:
             root = self.root()
 
         queue = deque()
-        queue.append(self.root())
+        queue.append(root)
 
         nodes = []
-
-        self.depth = 0
 
         while len(queue) > 0:
             x = queue.popleft()
