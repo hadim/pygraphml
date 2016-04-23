@@ -20,11 +20,7 @@ install:
     - python setup.py install
 
 script:
-    - if [ $TRAVIS_PYTHON_VERSION == "3.5" ]; then
-        travis-sphinx --source=doc/source/ build
-      fi
+    - if [[ $TRAVIS_PYTHON_VERSION == 3.5 ]]; then travis-sphinx --source=doc/source/ build; fi
 
 after_success:
-    - if [ $TRAVIS_PYTHON_VERSION == "3.5" ]; then
-        travis-sphinx deploy
-      fi
+    - if [[ $TRAVIS_PYTHON_VERSION == 3.5 ]]; then travis-sphinx deploy; fi
