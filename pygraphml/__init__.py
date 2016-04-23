@@ -12,3 +12,5 @@ from .node import Node
 from .edge import Edge
 from .graph import Graph
 from .graphml_parser import GraphMLParser
+
+__version__ = '2.1'
