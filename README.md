@@ -12,7 +12,7 @@ Documentation and tutorial are available at http://hadim.github.io/pygraphml/. A
 
 # Requirements
 
-- Python > 2.7 and > 3.3
+- Python > 2.7 and > 3.4
 - NetworkX (http://networkx.lanl.gov/): only for the visualization
 
 # Install

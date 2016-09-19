@@ -30,7 +30,7 @@ setup(name='pygraphml',
       description='Small library to parse GraphML files in Python',
       long_description=read('README.md'),
       url='https://github.com/hadim/pygraphml/',
-      packages=['pygraphml'],
+      packages=find_packages(),
       classifiers=[
               'Development Status :: 5 - Production/Stable',
               'Intended Audience :: Developers',
@@ -42,5 +42,4 @@ setup(name='pygraphml',
               'Programming Language :: Python :: 2.7',
               'Programming Language :: Python :: 3',
               'Programming Language :: Python :: 3.4',
-        ],
-      packages=find_packages())
+        ])
