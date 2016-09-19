@@ -3,6 +3,8 @@ import io
 import re
 
 from setuptools import setup
+from setuptools import find_packages
+
 
 def read(*names, **kwargs):
     with io.open(
@@ -39,5 +41,6 @@ setup(name='pygraphml',
               'Programming Language :: Python :: 2',
               'Programming Language :: Python :: 2.7',
               'Programming Language :: Python :: 3',
-              'Programming Language :: Python :: 3.3',
-        ],)
+              'Programming Language :: Python :: 3.4',
+        ],
+      packages=find_packages())
