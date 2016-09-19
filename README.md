@@ -1,9 +1,8 @@
-[![Build Status](https://travis-ci.org/hadim/pygraphml.svg?branch=master)](https://travis-ci.org/hadim/pygraphml)
-
-[![DOI](https://zenodo.org/badge/4163/hadim/pygraphml.svg)](https://zenodo.org/badge/latestdoi/4163/hadim/pygraphml)
-
-
 # pygraphml
+
+[![Build Status](https://travis-ci.org/hadim/pygraphml.svg?branch=master)](https://travis-ci.org/hadim/pygraphml)
+[![DOI](https://zenodo.org/badge/4163/hadim/pygraphml.svg)](https://zenodo.org/badge/latestdoi/4163/hadim/pygraphml)
+[![PyPI version](https://img.shields.io/pypi/v/pygraphml.svg?maxAge=2591000)](https://pypi.org/project/pygraphml/)
 
 `pygraphml` is a small Python library designed to parse GraphML file. To
 see specification about GraphML, see http://graphml.graphdrawing.org/
@@ -37,5 +36,4 @@ Under BSD license. See [LICENSE](LICENSE).
 - Modify version number in `pygraphml/__init__.py`
 - Commit and push changes
 - Make Github release
-- Create packages : `python setup.py sdist bdist_wheel`
-- Upload packages : `twine upload dist/*`
+- Create and upload packages : `python setup.py sdist bdist_wheel uploadl`
