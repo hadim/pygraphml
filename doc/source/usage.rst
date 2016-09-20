@@ -47,6 +47,9 @@ Graph search
 
 You can use `breadth-first search <http://en.wikipedia.org/wiki/Breadth-first_search>`_ and `depth-first search <http://en.wikipedia.org/wiki/Depth-first_search>`_::
 
+    # Set a root
+    g.set_root(n1)
+
     nodes = g.BFS()
     for node in nodes:
         print(node)
