@@ -7,6 +7,11 @@ With pip::
 
     pip install pygraphml
 
+Or with Anaconda and `conda-forge`::
+
+	conda config --add channels conda-forge
+	conda install pygraphml
+
 Or clone repo::
 
     git clone https://github.com/hadim/pygraphml.git

@@ -18,6 +18,13 @@ Documentation and tutorial are available at http://hadim.github.io/pygraphml/. A
 
 `pip install pygraphml`
 
+Or you can use Anaconda and `conda-forge` :
+
+```
+conda config --add channels conda-forge
+conda install pygraphml
+```
+
 # How to cite
 
 If you use this library for your research, don't forget to cite it : [![DOI](https://zenodo.org/badge/4163/hadim/pygraphml.svg)](https://zenodo.org/badge/latestdoi/4163/hadim/pygraphml).
