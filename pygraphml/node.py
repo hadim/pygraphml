@@ -12,11 +12,11 @@ class Node(Item):
     """
     """
 
-    def __init__(self):
+    def __init__(self, id=None):
         """
         """
 
-        super(Node, self).__init__()
+        super(Node, self).__init__(id)
 
         self._edges = []
 

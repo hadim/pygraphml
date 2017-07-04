@@ -97,7 +97,7 @@ class GraphMLParser:
 
             # Get nodes
             for node in graph.getElementsByTagName("node"):
-                n = g.add_node(node.getAttribute('id'))
+                n = g.add_node(id=node.getAttribute('id'))
 
                 for attr in node.getElementsByTagName("data"):
                     if attr.firstChild:
@@ -109,7 +109,9 @@ class GraphMLParser:
             for edge in graph.getElementsByTagName("edge"):
                 source = edge.getAttribute('source')
                 dest = edge.getAttribute('target')
-                e = g.add_edge_by_label(source, dest)
+
+                # source/target attributes refer to IDs: http://graphml.graphdrawing.org/xmlns/1.1/graphml-structure.xsd
+                e = g.add_edge_by_id(source, dest)
 
                 for attr in edge.getElementsByTagName("data"):
                     if attr.firstChild:
