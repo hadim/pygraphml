@@ -118,11 +118,11 @@ class Graph:
 
         return node.children()
 
-    def add_node(self, label=""):
+    def add_node(self, label="", id=None):
         """
         """
 
-        n = Node()
+        n = Node(id)
         n['label'] = label
         self._nodes.append(n)
 
@@ -141,6 +141,17 @@ class Graph:
         self._edges.append(e)
 
         return e
+
+    def add_edge_by_id(self, id1, id2):
+        try:
+            n1 = next(n for n in self._nodes if n.id == int(id1))
+        except StopIteration:
+            raise ValueError('Graph has no node with ID {}'.format(id1))
+        try:
+            n2 = next(n for n in self._nodes if n.id == int(id2))
+        except StopIteration:
+            raise ValueError('Graph has no node with ID {}'.format(id2))
+        return self.add_edge(n1, n2)
 
     def add_edge_by_label(self, label1, label2):
         """
