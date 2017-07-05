@@ -16,10 +16,10 @@ class Item(object):
 
     def __init__(self, id=None):
         if id is None:
-            self.id = Item.ID
+            self.id = str(Item.ID)
             Item.ID += 1
         else:
-            self.id = int(id)
+            self.id = id
         self.attr = {}
 
     def __str__(self):
