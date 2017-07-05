@@ -144,11 +144,11 @@ class Graph:
 
     def add_edge_by_id(self, id1, id2):
         try:
-            n1 = next(n for n in self._nodes if n.id == int(id1))
+            n1 = next(n for n in self._nodes if n.id == id1)
         except StopIteration:
             raise ValueError('Graph has no node with ID {}'.format(id1))
         try:
-            n2 = next(n for n in self._nodes if n.id == int(id2))
+            n2 = next(n for n in self._nodes if n.id == id2)
         except StopIteration:
             raise ValueError('Graph has no node with ID {}'.format(id2))
         return self.add_edge(n1, n2)
