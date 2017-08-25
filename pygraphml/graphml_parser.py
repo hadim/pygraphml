@@ -77,56 +77,73 @@ class GraphMLParser:
         f = open(fname, 'w')
         f.write(doc.toprettyxml(indent = '    '))
 
-    def parse(self, fname):
+    @staticmethod
+    def parse_dom(dom):
+        """Parse dom into a Graph
+
+        :param dom: dom as returned by minidom.parse or minidom.parseString
+        :return: A Graph representation
         """
-        """
+        root = dom.getElementsByTagName("graphml")[0]
+        graph = root.getElementsByTagName("graph")[0]
+        name = graph.getAttribute('id')
 
-        g = None
-        with open( fname, 'r' ) as f:
-            dom = minidom.parse(f)
-            root = dom.getElementsByTagName("graphml")[0]
-            graph = root.getElementsByTagName("graph")[0]
-            name = graph.getAttribute('id')
+        g = Graph(name)
 
-            g = Graph(name)
+        # # Get attributes
+        # attributes = []
+        # for attr in root.getElementsByTagName("key"):
+        #     attributes.append(attr)
 
-            # # Get attributes
-            # attributes = []
-            # for attr in root.getElementsByTagName("key"):
-            #     attributes.append(attr)
+        # Get nodes
+        for node in graph.getElementsByTagName("node"):
+            n = g.add_node(id=node.getAttribute('id'))
 
-            # Get nodes
-            for node in graph.getElementsByTagName("node"):
-                n = g.add_node(id=node.getAttribute('id'))
+            for attr in node.getElementsByTagName("data"):
+                if attr.firstChild:
+                    n[attr.getAttribute("key")] = attr.firstChild.data
+                else:
+                    n[attr.getAttribute("key")] = ""
 
-                for attr in node.getElementsByTagName("data"):
-                    if attr.firstChild:
-                        n[attr.getAttribute("key")] = attr.firstChild.data
-                    else:
-                        n[attr.getAttribute("key")] = ""
+        # Get edges
+        for edge in graph.getElementsByTagName("edge"):
+            source = edge.getAttribute('source')
+            dest = edge.getAttribute('target')
 
-            # Get edges
-            for edge in graph.getElementsByTagName("edge"):
-                source = edge.getAttribute('source')
-                dest = edge.getAttribute('target')
+            # source/target attributes refer to IDs: http://graphml.graphdrawing.org/xmlns/1.1/graphml-structure.xsd
+            e = g.add_edge_by_id(source, dest)
 
-                # source/target attributes refer to IDs: http://graphml.graphdrawing.org/xmlns/1.1/graphml-structure.xsd
-                e = g.add_edge_by_id(source, dest)
-
-                for attr in edge.getElementsByTagName("data"):
-                    if attr.firstChild:
-                        e[attr.getAttribute("key")] = attr.firstChild.data
-                    else:
-                        e[attr.getAttribute("key")] = ""
+            for attr in edge.getElementsByTagName("data"):
+                if attr.firstChild:
+                    e[attr.getAttribute("key")] = attr.firstChild.data
+                else:
+                    e[attr.getAttribute("key")] = ""
 
         return g
+
+    def parse(self, fname):
+        """Parse a file into a Graph
+
+        :param fname: Filename
+        :return: Graph
+        """
+        with open(fname, 'r') as f:
+            dom = minidom.parse(f)
+            return self.parse_dom(dom)
+
+    def parse_string(self, string):
+        """Parse a string into a Graph
+
+        :param string: String that is to be passed into Grapg
+        :return: Graph
+        """
+        dom = minidom.parseString(string)
+        return self.parse_dom(dom)
 
 
 if __name__ == '__main__':
 
     parser = GraphMLParser()
-    g = parser.parse('test.graphml')
+    g = parser.parse('/Users/jameswanderi/Work/dataq/data-acquisition/datapipe/deployments/all/mtn_zm/workflows/bib-weekly-aggr-scrub.xml')
 
     g.show(True)
-
-
