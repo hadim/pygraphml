@@ -25,4 +25,3 @@ class Attribute:
         s = ""
         s += "%s : %s" % (self.name, str(self.value))
         return s
-

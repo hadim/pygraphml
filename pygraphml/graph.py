@@ -133,8 +133,10 @@ class Graph:
         """
 
         if n1 not in self._nodes:
+            print(n1)
             raise Test("n1 has not been added")
         if n2 not in self._nodes:
+            print(n2)
             raise Test("n2 has not been added")
 
         e = Edge(n1, n2, directed)

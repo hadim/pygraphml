@@ -26,6 +26,7 @@ class Edge(Item):
 
         self._directed = directed
 
+
     def node(self, node):
         """
         Return the other node
@@ -62,4 +63,3 @@ class Edge(Item):
         """
 
         self._directed = dir
-

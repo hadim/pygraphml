@@ -35,6 +35,7 @@ class GraphMLParser:
             attr_node.setAttribute('id', a.name)
             attr_node.setAttribute('attr.name', a.name)
             attr_node.setAttribute('attr.type', a.type)
+            attr_node.setAttribute('for', a.forStr)
             root.appendChild(attr_node)
 
         graph_node = doc.createElement('graph')

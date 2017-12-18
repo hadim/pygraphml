@@ -37,17 +37,17 @@ class Item(object):
 
         return s
 
-    def __setitem__(self, name, value):
-        """
-        """
-
-        self.attr[name] = Attribute(name, value)
-
     def __getitem__(self, name):
         """
         """
 
         return self.attr[name].value
+
+    def set_attribute(self, name, value, type):
+        """
+        """
+
+        self.attr[name] = Attribute(name, value, type)
 
     def attributes(self):
         """
