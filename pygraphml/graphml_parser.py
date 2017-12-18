@@ -12,6 +12,7 @@ from . import Graph
 from . import Node
 from . import Edge
 
+
 class GraphMLParser:
     """
     """
@@ -30,11 +31,12 @@ class GraphMLParser:
         doc.appendChild(root)
 
         # Add attributs
-        for a in graph.get_attributs():
+        for a in graph.get_attributes():
             attr_node = doc.createElement('key')
             attr_node.setAttribute('id', a.name)
             attr_node.setAttribute('attr.name', a.name)
             attr_node.setAttribute('attr.type', a.type)
+            attr_node.setAttribute('for', a.for_str())
             root.appendChild(attr_node)
 
         graph_node = doc.createElement('graph')
@@ -65,7 +67,8 @@ class GraphMLParser:
             edge.setAttribute('source', e.node1['label'])
             edge.setAttribute('target', e.node2['label'])
             if e.directed() != graph.directed:
-                edge.setAttribute('directed', 'true' if e.directed() else 'false')
+                edge.setAttribute(
+                    'directed', 'true' if e.directed() else 'false')
             for a in e.attributes():
                 if e != 'label':
                     data = doc.createElement('data')
@@ -85,7 +88,7 @@ class GraphMLParser:
         """
 
         g = None
-        with open( fname, 'r' ) as f:
+        with open(fname, 'r') as f:
             dom = minidom.parse(f)
             root = dom.getElementsByTagName("graphml")[0]
             graph = root.getElementsByTagName("graph")[0]
@@ -131,5 +134,3 @@ if __name__ == '__main__':
     g = parser.parse('test.graphml')
 
     g.show(True)
-
-

@@ -23,8 +23,8 @@ class Graph:
 
         self.name = name
 
-        self._nodes = []
-        self._edges = []
+        self._nodes = set()
+        self._edges = set()
         self._root = None
         self.directed = True
 
@@ -124,7 +124,7 @@ class Graph:
 
         n = Node(id)
         n['label'] = label
-        self._nodes.append(n)
+        self._nodes.add(n)
 
         return n
 
@@ -133,12 +133,14 @@ class Graph:
         """
 
         if n1 not in self._nodes:
-            raise Test("fff")
+            print(n1)
+            raise Test("n1 has not been added")
         if n2 not in self._nodes:
-            raise Test("fff")
+            print(n2)
+            raise Test("n2 has not been added")
 
         e = Edge(n1, n2, directed)
-        self._edges.append(e)
+        self._edges.add(e)
 
         return e
 
@@ -192,7 +194,7 @@ class Graph:
                 self.set_root(n)
                 return n
 
-    def get_attributs(self):
+    def get_attributes(self):
         """
         """
 

@@ -7,12 +7,14 @@ from __future__ import print_function
 
 
 from . import Item
+from . import EdgeAttribute
+
 
 class Edge(Item):
     """
     """
 
-    def __init__(self, node1, node2, directed = False):
+    def __init__(self, node1, node2, directed=False):
         """
         """
 
@@ -50,7 +52,6 @@ class Edge(Item):
 
         return self.node2
 
-
     def directed(self):
         """
         """
@@ -63,3 +64,7 @@ class Edge(Item):
 
         self._directed = dir
 
+    def set_attribute(self, name, value):
+        """
+        """
+        self.attr[name] = EdgeAttribute(name, value, type)

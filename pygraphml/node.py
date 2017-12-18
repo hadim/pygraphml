@@ -7,6 +7,8 @@ from __future__ import print_function
 
 
 from . import Item
+from . import NodeAttribute
+
 
 class Node(Item):
     """
@@ -25,7 +27,6 @@ class Node(Item):
         """
 
         return self._edges
-
 
     def children(self):
         """
@@ -49,3 +50,7 @@ class Node(Item):
 
         return parent
 
+    def set_attribute(self, name, value, type):
+        """
+        """
+        self.attr[name] = NodeAttribute(name, value, type)

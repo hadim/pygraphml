@@ -8,6 +8,7 @@ from __future__ import print_function
 
 from . import Attribute
 
+
 class Item(object):
     """
     """
@@ -37,17 +38,16 @@ class Item(object):
 
         return s
 
-    def __setitem__(self, name, value):
+    def set_attribute(self, name, value):
+        """
+        """
+        return NotImplemented
+
+    def set_attribute(self, name, value, type):
         """
         """
 
-        self.attr[name] = Attribute(name, value)
-
-    def __getitem__(self, name):
-        """
-        """
-
-        return self.attr[name].value
+        self.attr[name] = Attribute(name, value, type)
 
     def attributes(self):
         """
