@@ -30,7 +30,7 @@ class GraphMLParser:
         doc.appendChild(root)
 
         # Add attributs
-        for a in graph.get_attributs():
+        for a in graph.get_attributes():
             attr_node = doc.createElement('key')
             attr_node.setAttribute('id', a.name)
             attr_node.setAttribute('attr.name', a.name)
