@@ -10,7 +10,7 @@ class Attribute:
     """
     """
 
-    def __init__(self, name, value, type = "string"):
+    def __init__(self, name, value, type="string"):
         """
         """
 
@@ -25,3 +25,28 @@ class Attribute:
         s = ""
         s += "%s : %s" % (self.name, str(self.value))
         return s
+
+    def for_str(self):
+        return NotImplemented
+
+
+class EdgeAttribute(Attribute):
+    """
+    """
+
+    def __init__(self, name, value, type, forStr):
+        Attribute.__init__(self, name, value, type)
+
+    def for_str(self):
+        return "edge"
+
+
+class NodeAttribute(Attribute):
+    """
+    """
+
+    def __init__(self, name, value, type, forStr):
+        Attribute.__init__(self, name, value, type)
+
+    def for_str(self):
+        return "node"

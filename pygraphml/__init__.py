@@ -5,7 +5,7 @@ from __future__ import division
 from __future__ import absolute_import
 from __future__ import print_function
 
-from .attribute import Attribute
+from .attribute import Attribute, EdgeAttribute, NodeAttribute
 from .item import Item
 from .point import Point
 from .node import Node
