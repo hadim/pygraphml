@@ -29,6 +29,7 @@ setup(name='pygraphml',
       author_email='hadrien.mary@gmail.com',
       description='Small library to parse GraphML files in Python',
       long_description=read('README.md'),
+      long_description_content_type='text/markdown',
       url='https://github.com/hadim/pygraphml/',
       packages=find_packages(),
       classifiers=[
