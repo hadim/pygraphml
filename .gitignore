@@ -7,3 +7,6 @@ dist
 MANIFEST
 build/
 *.egg-info
+
+# Rever
+rever/
