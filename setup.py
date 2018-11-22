@@ -1,6 +1,5 @@
 import os
 import io
-import re
 
 from setuptools import setup
 from setuptools import find_packages
@@ -14,20 +13,11 @@ def read(*names, **kwargs):
         return fp.read()
 
 
-def find_version(*file_paths):
-    version_file = read(*file_paths)
-    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
-                              version_file, re.M)
-    if version_match:
-        return version_match.group(1)
-    raise RuntimeError("Unable to find version string.")
-
-
 setup(name='pygraphml',
-      version=find_version("pygraphml", "__init__.py"),
+      version="2.2",
       author='Hadrien Mary',
       author_email='hadrien.mary@gmail.com',
-      description='Small library to parse GraphML files in Python',
+      description='Library to parse GraphML files in Python',
       long_description=read('README.md'),
       long_description_content_type='text/markdown',
       url='https://github.com/hadim/pygraphml/',
@@ -43,4 +33,4 @@ setup(name='pygraphml',
               'Programming Language :: Python :: 2.7',
               'Programming Language :: Python :: 3',
               'Programming Language :: Python :: 3.4',
-        ])
+              ])

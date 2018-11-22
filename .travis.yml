@@ -1,26 +1,37 @@
 language: python
-python:
-  - "2.7"
-  - "3.5"
 
-before_install:
-    - wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
-    - chmod +x miniconda.sh
-    - "./miniconda.sh -b"
-    - export PATH=/home/travis/miniconda3/bin:$PATH
-    - conda update --yes conda
-
-    # The next couple lines fix a crash with multiprocessing on Travis and are not specific to using Miniconda
-    - sudo rm -rf /dev/shm
-    - sudo ln -s /run/shm /dev/shm
+matrix:
+  fast_finish: true
+  include:
+    - language: python
+      os: linux
+      env:
+        - PYTHON_VERSION="2.7"
+    - language: python
+      os: linux
+      env:
+        - PYTHON_VERSION="3.6"
+    - language: python
+      os: linux
+      env:
+        - PYTHON_VERSION="3.7"
 
 install:
-    - conda install --yes python=$TRAVIS_PYTHON_VERSION sphinx
-    - pip install --user travis-sphinx
-    - python setup.py install
+  - sudo apt-get update
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - echo ". $HOME/miniconda/etc/profile.d/conda.sh" >> $HOME/.bashrc
+  - source $HOME/.bashrc
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda config --add channels conda-forge
+  - conda update -q conda
+  - conda info -a
+  - conda create -n conda_env python=$PYTHON_VERSION
+  - conda activate conda_env
+  - conda install matplotlib networkx nose pip setuptools
 
 script:
-    - if [[ $TRAVIS_PYTHON_VERSION == 3.5 ]]; then travis-sphinx --source=doc/source/ build; fi
-
-after_success:
-    - if [[ $TRAVIS_PYTHON_VERSION == 3.5 ]]; then travis-sphinx deploy; fi
+  - conda activate conda_env
+  - python setup.py install
+  - nosetests -v -s .

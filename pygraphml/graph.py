@@ -10,6 +10,7 @@ from . import Edge
 
 from collections import deque
 
+
 class Graph:
     """
     Main class which represent a Graph
@@ -247,6 +248,7 @@ class Graph:
 
         plt.show()
 
+
 class NoDupesGraph(Graph):
     '''Add nodes without worrying if it is a duplicate.
        Add edges without worrying if nodes exist   '''
@@ -289,37 +291,3 @@ class NoDupesGraph(Graph):
         not implemented
         '''
         pass
-
-if __name__ == '__main__':
-
-    import GraphMLParser
-    parser = GraphMLParser.GraphMLParser()
-    import random
-    import timeit
-
-    def no_dupes_test():
-     graph = NoDupesGraph()
-     n0 = graph.add_node(label='first')
-     for x in range (20000):
-        x = str(random.random())
-        n1 = graph.add_node(label=x)
-        graph.add_edge(n0['label'],n1['label'])
-        n0=n1
-     #parser.write(graph,'/dev/null')
-
-    def vanilla_graph_test():
-     graph = Graph()
-     n0 = graph.add_node(label='first')
-     for x in range (20000):
-        x = str(random.random())
-        n1 = graph.add_node(label=x)
-        graph.add_edge(n0,n1)
-        n0=n1
-     #parser.write(graph,'/dev/null')
-
-    number = 5
-    print("No Dupes Test: ")
-    print('  %s'.format(timeit.timeit('no_dupes_test()',setup='from __main__ import no_dupes_test',number=number)))
-
-    print("Vanilla Graph Test: ")
-    print('  %s'.format(timeit.timeit('vanilla_graph_test()',setup='from __main__ import vanilla_graph_test', number=number)))
