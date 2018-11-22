@@ -11,4 +11,4 @@ $GITHUB_ORG = 'hadim'
 $GITHUB_REPO = 'pygraphml'
 
 $CONDA_FORGE_FEEDSTOCK = 'pygraphml-feedstock'
-$CONDA_FORGE_SOURCE_URL = 'https://pypi.io/packages/source/p/pygraphml/pygraphml-$VERSION.tar.gz'
+$CONDA_FORGE_SOURCE_URL = 'https://pypi.org/packages/source/p/pygraphml/pygraphml-$VERSION.tar.gz'
