@@ -13,4 +13,4 @@ from .edge import Edge
 from .graph import Graph
 from .graphml_parser import GraphMLParser
 
-__version__ = '2.2'
+__version__ = '2.3'
