@@ -14,7 +14,7 @@ def read(*names, **kwargs):
 
 
 setup(name='pygraphml',
-      version='2.4.1',
+      version='2.4.2',
       author='Hadrien Mary',
       author_email='hadrien.mary@gmail.com',
       description='Library to parse GraphML files in Python',
