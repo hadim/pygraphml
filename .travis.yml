@@ -29,9 +29,9 @@ install:
   - conda info -a
   - conda create -n conda_env python=$PYTHON_VERSION
   - conda activate conda_env
-  - conda install matplotlib networkx nose pip setuptools
+  - conda install matplotlib networkx nose2 pip setuptools
 
 script:
   - conda activate conda_env
   - python setup.py install
-  - nosetests -v -s .
+  - nose2 -v -s pygraphml
