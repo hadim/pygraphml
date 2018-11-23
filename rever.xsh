@@ -1,6 +1,6 @@
 $PROJECT = 'pygraphml'
 
-$ACTIVITIES = ['version_bump', 'tag', 'push_tag', 'pypi', 'conda_forge', 'ghrelease']
+$ACTIVITIES = ['version_bump', 'tag', 'push_tag', 'pypi', 'ghrelease', 'conda_forge']
 
 $VERSION_BUMP_PATTERNS = [('pygraphml/__init__.py', '__version__\s*=.*', "__version__ = '$VERSION'"),
                           ('setup.py', 'version\s*=.*,', "version='$VERSION',")
