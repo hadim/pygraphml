@@ -5,6 +5,7 @@ from __future__ import division
 from __future__ import absolute_import
 from __future__ import print_function
 
+import xml.dom
 from xml.dom import minidom
 
 from . import Graph
@@ -143,12 +144,12 @@ class GraphMLParser:
             # Get nodes
             for node in graph.getElementsByTagName("node"):
                 n = g.add_node(id=node.getAttribute('id'))
-
-                for attr in node.getElementsByTagName("data"):
-                    if attr.firstChild:
-                        n[attr.getAttribute("key")] = attr.firstChild.data
-                    else:
-                        n[attr.getAttribute("key")] = ""
+                for attr in node.childNodes:
+                    if attr.nodeType == xml.dom.Node.ELEMENT_NODE and attr.tagName == "data":
+                        if attr.firstChild:
+                            n[attr.getAttribute("key")] = attr.firstChild.data
+                        else:
+                            n[attr.getAttribute("key")] = ""
 
             # Get edges
             for edge in graph.getElementsByTagName("edge"):
