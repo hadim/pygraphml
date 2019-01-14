@@ -128,7 +128,7 @@ class GraphMLParser:
         """
 
         g = None
-        with open( fname, 'r') as f:
+        with open(fname, 'r') as f:
             dom = minidom.parse(f)
             root = dom.getElementsByTagName("graphml")[0]
             graph = root.getElementsByTagName("graph")[0]
@@ -144,12 +144,12 @@ class GraphMLParser:
             # Get nodes
             for node in graph.getElementsByTagName("node"):
                 n = g.add_node(id=node.getAttribute('id'))
-                for attr in node.childNodes:
-                    if attr.nodeType == xml.dom.Node.ELEMENT_NODE and attr.tagName == "data":
-                        if attr.firstChild:
-                            n[attr.getAttribute("key")] = attr.firstChild.data
+                for child in node.childNodes:
+                    if child.nodeType == xml.dom.Node.ELEMENT_NODE and child.tagName == "data":
+                        if child.firstChild:
+                            n[child.getAttribute("key")] = child.firstChild.data
                         else:
-                            n[attr.getAttribute("key")] = ""
+                            n[child.getAttribute("key")] = ""
 
             # Get edges
             for edge in graph.getElementsByTagName("edge"):
@@ -158,12 +158,12 @@ class GraphMLParser:
 
                 # source/target attributes refer to IDs: http://graphml.graphdrawing.org/xmlns/1.1/graphml-structure.xsd
                 e = g.add_edge_by_id(source, dest)
-
-                for attr in edge.getElementsByTagName("data"):
-                    if attr.firstChild:
-                        e[attr.getAttribute("key")] = attr.firstChild.data
-                    else:
-                        e[attr.getAttribute("key")] = ""
+                for child in edge.childNodes:
+                    if child.nodeType == xml.dom.Node.ELEMENT_NODE and child.tagName == "data":
+                        if child.firstChild:
+                            n[child.getAttribute("key")] = child.firstChild.data
+                        else:
+                            n[child.getAttribute("key")] = ""
 
         return g
 
