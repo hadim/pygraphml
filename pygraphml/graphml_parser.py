@@ -5,6 +5,7 @@ from __future__ import division
 from __future__ import absolute_import
 from __future__ import print_function
 
+import xml.dom
 from xml.dom import minidom
 
 from . import Graph
@@ -63,7 +64,8 @@ class GraphMLParser:
             edge.setAttribute('source', e.node1['label'])
             edge.setAttribute('target', e.node2['label'])
             if e.directed() != graph.directed:
-                edge.setAttribute('directed', 'true' if e.directed() else 'false')
+                edge.setAttribute(
+                    'directed', 'true' if e.directed() else 'false')
             for a in e.attributes():
                 if e != 'label':
                     data = doc.createElement('data')
@@ -127,7 +129,7 @@ class GraphMLParser:
         """
 
         g = None
-        with open( fname, 'r') as f:
+        with open(fname, 'r') as f:
             dom = minidom.parse(f)
             root = dom.getElementsByTagName("graphml")[0]
             graph = root.getElementsByTagName("graph")[0]
@@ -143,12 +145,13 @@ class GraphMLParser:
             # Get nodes
             for node in graph.getElementsByTagName("node"):
                 n = g.add_node(id=node.getAttribute('id'))
-
-                for attr in node.getElementsByTagName("data"):
-                    if attr.firstChild:
-                        n[attr.getAttribute("key")] = attr.firstChild.data
-                    else:
-                        n[attr.getAttribute("key")] = ""
+                for child in node.childNodes:
+                    if child.nodeType == xml.dom.Node.ELEMENT_NODE and child.tagName == "data":
+                        if child.firstChild:
+                            n[child.getAttribute(
+                                "key")] = child.firstChild.data
+                        else:
+                            n[child.getAttribute("key")] = ""
 
             # Get edges
             for edge in graph.getElementsByTagName("edge"):
@@ -157,12 +160,13 @@ class GraphMLParser:
 
                 # source/target attributes refer to IDs: http://graphml.graphdrawing.org/xmlns/1.1/graphml-structure.xsd
                 e = g.add_edge_by_id(source, dest)
-
-                for attr in edge.getElementsByTagName("data"):
-                    if attr.firstChild:
-                        e[attr.getAttribute("key")] = attr.firstChild.data
-                    else:
-                        e[attr.getAttribute("key")] = ""
+                for child in edge.childNodes:
+                    if child.nodeType == xml.dom.Node.ELEMENT_NODE and child.tagName == "data":
+                        if child.firstChild:
+                            e[child.getAttribute(
+                                "key")] = child.firstChild.data
+                        else:
+                            e[child.getAttribute("key")] = ""
 
         return g
 
