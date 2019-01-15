@@ -64,7 +64,8 @@ class GraphMLParser:
             edge.setAttribute('source', e.node1['label'])
             edge.setAttribute('target', e.node2['label'])
             if e.directed() != graph.directed:
-                edge.setAttribute('directed', 'true' if e.directed() else 'false')
+                edge.setAttribute(
+                    'directed', 'true' if e.directed() else 'false')
             for a in e.attributes():
                 if e != 'label':
                     data = doc.createElement('data')
@@ -147,7 +148,8 @@ class GraphMLParser:
                 for child in node.childNodes:
                     if child.nodeType == xml.dom.Node.ELEMENT_NODE and child.tagName == "data":
                         if child.firstChild:
-                            n[child.getAttribute("key")] = child.firstChild.data
+                            n[child.getAttribute(
+                                "key")] = child.firstChild.data
                         else:
                             n[child.getAttribute("key")] = ""
 
@@ -161,9 +163,10 @@ class GraphMLParser:
                 for child in edge.childNodes:
                     if child.nodeType == xml.dom.Node.ELEMENT_NODE and child.tagName == "data":
                         if child.firstChild:
-                            n[child.getAttribute("key")] = child.firstChild.data
+                            e[child.getAttribute(
+                                "key")] = child.firstChild.data
                         else:
-                            n[child.getAttribute("key")] = ""
+                            e[child.getAttribute("key")] = ""
 
         return g
 
