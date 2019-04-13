@@ -157,6 +157,9 @@ class GraphMLParser:
 
                 # source/target attributes refer to IDs: http://graphml.graphdrawing.org/xmlns/1.1/graphml-structure.xsd
                 e = g.add_edge_by_id(source, dest)
+                
+                # keep the id of the parsed dom
+                e.id = edge.getAttribute('id')
 
                 for attr in edge.getElementsByTagName("data"):
                     if attr.firstChild:
