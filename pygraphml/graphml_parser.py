@@ -18,7 +18,7 @@ class GraphMLParser:
         """
         """
 
-    def write(self, graph, fname=None):
+    def write(self, graph, fname=None, enc=None):
         """
         """
 
@@ -73,7 +73,7 @@ class GraphMLParser:
             graph_node.appendChild(edge)
 
         if fname is not None:
-            f = open(fname, 'w')
+            f = open(fname, 'w', encoding=enc)
             f.write(doc.toprettyxml(indent='    '))
         else:
             return doc.toprettyxml(indent='', newl='')
