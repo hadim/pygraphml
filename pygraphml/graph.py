@@ -241,10 +241,11 @@ class Graph:
                 n2_label = e.node2.id
             G.add_edge(n1_label, n2_label)
 
-        nx.draw(G)
-
+        pos = None
         if show_label:
-            nx.draw_networkx_labels(G, pos=nx.spring_layout(G))
+            pos = nx.spring_layout(G)
+            nx.draw_networkx_labels(G, pos=pos)
+        nx.draw(G, pos=pos)
 
         plt.show()
 
