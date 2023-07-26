@@ -5,7 +5,7 @@ from __future__ import division
 from __future__ import absolute_import
 from __future__ import print_function
 
-from . import Attribute
+from pygraphml import Attribute
 
 
 class Item(object):
@@ -20,7 +20,7 @@ class Item(object):
             Item.ID += 1
         else:
             self.id = node_id
-        self.attr = {}
+        self._attr: dict[str, Attribute] = {}
 
     def __str__(self):
         """
@@ -31,26 +31,26 @@ class Item(object):
         s += "ID: {}".format(self.id)
         s += "\n"
 
-        for a in self.attr:
-            s += "{} : {}".format(self.attr[a].name, str(self.attr[a].value))
+        for a in self._attr:
+            s += "{} : {}".format(self._attr[a].name, str(self._attr[a].value))
             s += "\n"
 
         return s
 
-    def __setitem__(self, name, value):
+    def __setitem__(self, name: str, value):
         """
         """
 
-        self.attr[name] = Attribute(name, value)
+        self._attr[name] = Attribute(name, value)
 
-    def __getitem__(self, name):
+    def __getitem__(self, name: str):
         """
         """
 
-        return self.attr[name].value
+        return self._attr[name].value
 
-    def attributes(self):
+    def attributes(self) -> dict[str, Attribute]:
         """
         """
 
-        return self.attr
+        return self._attr

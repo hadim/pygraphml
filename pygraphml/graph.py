@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+from __future__ import annotations
 from __future__ import division
 from __future__ import absolute_import
 from __future__ import print_function
 
-from . import Node
-from . import Edge
+from pygraphml import Node
+from pygraphml import Attribute
+from pygraphml import Edge
 
 from collections import deque
 
@@ -15,14 +17,11 @@ class Graph:
     """
     Main class which represent a Graph
 
-    :param name: name of the graph
     """
 
-    def __init__(self, name=""):
+    def __init__(self):
         """
         """
-
-        self.name = name
 
         self._nodes = []
         self._edges = []
@@ -129,7 +128,7 @@ class Graph:
 
         return n
 
-    def add_edge(self, n1, n2, directed=False):
+    def add_edge(self, n1, n2, directed=None):
         """
         """
 
@@ -138,12 +137,12 @@ class Graph:
         if n2 not in self._nodes:
             raise Test("fff")
 
-        e = Edge(n1, n2, directed)
+        e = Edge(n1, n2, directed if directed is not None else self.directed)
         self._edges.append(e)
 
         return e
 
-    def add_edge_by_id(self, id1, id2):
+    def add_edge_by_id(self, id1, id2) -> Edge:
         try:
             n1 = next(n for n in self._nodes if n.id == id1)
         except StopIteration:
@@ -193,26 +192,36 @@ class Graph:
                 self.set_root(n)
                 return n
 
-    def get_attributs(self):
+    def get_attributs(self) -> list[Attribute]:
         """
         """
 
-        attr = []
-        attr_obj = []
+        return list(self.__get_attributs().values())
+
+    def __get_attributs(self) -> dict[str, Attribute]:
+        result: dict[str, Attribute] = {}
+
+        def apply(item: Node | Edge):
+            attrs = item.attributes()
+
+            for a in attrs:
+                if a not in result:
+                    result[a] = attrs[a]
+
+            nested_graph = item.nested_graph()
+            if nested_graph is not None:
+                nested_result = nested_graph.__get_attributs()
+                for a in nested_result:
+                    if a not in result:
+                        result[a] = nested_result[a]
+
         for n in self.nodes():
-            for a in n.attr:
-                if a not in attr:
-                    attr.append(a)
-                    attr_obj.append(n.attr[a])
+            apply(n)
 
         for e in self.edges():
-            for a in e.attr:
-                if a not in attr:
-                    attr.append(a)
-                    attr_obj.append(e.attr[a])
+            apply(e)
 
-        return attr_obj
-
+        return result
 
     def show(self, show_label=False):
         """
