@@ -6,7 +6,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 
-from . import Item
+from pygraphml import Item
 
 class Node(Item):
     """
@@ -19,13 +19,13 @@ class Node(Item):
         super(Node, self).__init__(id)
 
         self._edges = []
+        self._nested_graph = None
 
     def edges(self, ):
         """
         """
 
         return self._edges
-
 
     def children(self):
         """
@@ -49,3 +49,14 @@ class Node(Item):
 
         return parent
 
+    def set_nested_graph(self, graph):
+        """
+        """
+
+        self._nested_graph = graph
+
+    def nested_graph(self):
+        """
+        """
+
+        return self._nested_graph

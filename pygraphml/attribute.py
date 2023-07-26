@@ -10,7 +10,7 @@ class Attribute:
     """
     """
 
-    def __init__(self, name, value, type = "string"):
+    def __init__(self, name: str, value, type="string"):
         """
         """
 
